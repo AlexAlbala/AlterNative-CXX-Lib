@@ -63,8 +63,13 @@ namespace System{
 		}
 	}
 
-	String* String::Concat(Object* elements) {
-		String* newstring = new String("String::Concat NotImplemented");
+	String* String::Concat(Array<Object>* elements) {
+		String* newstring = new String();
+		for(int i = 0; i < elements->Length; i++)
+		{
+			//ADD STRING TO THE STRING BUILDER
+
+		}		
 		delete elements;
 		return newstring;
 	}

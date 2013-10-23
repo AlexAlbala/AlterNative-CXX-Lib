@@ -9,6 +9,7 @@ namespace System{
 	public:
 		Exception();
 		Exception(String* message);	
+		~Exception() throw();
 		String* Message;
 	};
 }

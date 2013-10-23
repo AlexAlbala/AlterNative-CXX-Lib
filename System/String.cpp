@@ -5,7 +5,7 @@
 namespace System{
 
 	String::String() {
-		Data = null;
+		Data = new char[0];
 		Length = 0;
 	}
 
@@ -62,6 +62,19 @@ namespace System{
 			Data = null;
 		}
 	}
+	
+	String* String::Concat(Array<String>* elements) {
+		String* newstring = new String();
+		for(int i = 0; i < elements->Length; i++)
+		{
+			String* s = (*elements)[i];
+			int len = s->Length;
+			memcpy(newstring->Data+newstring->Length,s->Data,s->Length);
+			newstring->Length += s->Length;
+		}                
+		delete elements;
+		return newstring;
+	}
 
 	String* String::Concat(Array<Object>* elements) {
 		String* newstring = new String();
@@ -69,7 +82,7 @@ namespace System{
 		{
 			String* s = (*elements)[i]->ToString();
 			int len = s->Length;
-			memcpy(newstring->Data+newstring->Length,s->Data,s->Length);
+			memcpy(newstring->Data + newstring->Length, s->Data, s->Length);
 			newstring->Length += s->Length;
 		}                
 		delete elements;

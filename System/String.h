@@ -21,6 +21,7 @@ namespace System{
 		operator const char*();
 		virtual ~String(void);
 		String* ToString(void);
+		static String* Concat(Array<String>* elements);
 		static String* Concat(Array<Object>* elements);
 	};
 }

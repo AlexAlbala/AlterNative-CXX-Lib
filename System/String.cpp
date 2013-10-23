@@ -67,10 +67,17 @@ namespace System{
 		String* newstring = new String();
 		for(int i = 0; i < elements->Length; i++)
 		{
-			//ADD STRING TO THE STRING BUILDER
-
-		}		
+			String* s = (*elements)[i]->ToString();
+			int len = s->Length;
+			memcpy(newstring->Data+newstring->Length,s->Data,s->Length);
+			newstring->Length += s->Length;
+		}                
 		delete elements;
 		return newstring;
+	}	
+		
+	String* String::ToString()
+	{
+		return this;
 	}
 }

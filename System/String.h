@@ -20,6 +20,7 @@ namespace System{
 		Array<char>* ToCharArray();
 		operator const char*();
 		virtual ~String(void);
-		static String* Concat(Array<Object>* elements);	
+		String* ToString(void);
+		static String* Concat(Array<Object>* elements);
 	};
 }

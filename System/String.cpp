@@ -61,32 +61,38 @@ namespace System{
 			delete Data;
 			Data = null;
 		}
-	}
-	
+	}	
 	String* String::Concat(Array<String>* elements) {
 		String* newstring = new String();
+
+		int totalLength = 0;
+		for(int i = 0; i < elements->Length; i++)
+		{
+			totalLength += (*elements)[i]->Length;
+		}
+		newstring->Data = new char[totalLength];
+
 		for(int i = 0; i < elements->Length; i++)
 		{
 			String* s = (*elements)[i];
-			int len = s->Length;
-			memcpy(newstring->Data+newstring->Length,s->Data,s->Length);
+			//strncpy(newstring->Data + newstring->Length, s->Data, s->Length);
+			memcpy(newstring->Data + newstring->Length, s->Data, s->Length);
 			newstring->Length += s->Length;
+			delete s;
 		}                
 		delete elements;
 		return newstring;
 	}
 
 	String* String::Concat(Array<Object>* elements) {
-		String* newstring = new String();
+		Array<String>* stringArray = new Array<String>(elements->Length);
+
 		for(int i = 0; i < elements->Length; i++)
 		{
-			String* s = (*elements)[i]->ToString();
-			int len = s->Length;
-			memcpy(newstring->Data + newstring->Length, s->Data, s->Length);
-			newstring->Length += s->Length;
-		}                
+			stringArray->SetData(i , (String*)(*elements)[i]);
+		}
 		delete elements;
-		return newstring;
+		return Concat(stringArray);
 	}	
 		
 	String* String::ToString()

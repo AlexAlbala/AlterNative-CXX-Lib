@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\reclaim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\allchblk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\mach_dep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\os_dep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\mark_rts.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\headers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\mark.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\obj_map.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\blacklst.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\finalize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\new_hblk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\dbg_mlc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\malloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\stubborn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\dyn_load.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\typd_mlc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\ptr_chck.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\gc_cpp.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\mallocx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\checksums.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\thread_local_alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F42BB931-081B-433C-9E17-3D9B0C61D562}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

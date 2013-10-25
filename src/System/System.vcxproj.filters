@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Convert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\systemException\argumentException\ArgumentNullException.cpp">
+      <Filter>Source Files\exceptions\systemException\argumentException</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\systemException\argumentException\ArgumentOutOfRangeException.cpp">
+      <Filter>Source Files\exceptions\systemException\argumentException</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\systemException\ArgumentException.cpp">
+      <Filter>Source Files\exceptions\systemException</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\systemException\InvalidOperationException.cpp">
+      <Filter>Source Files\exceptions\systemException</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\systemException\NotImplementedException.cpp">
+      <Filter>Source Files\exceptions\systemException</Filter>
+    </ClCompile>
+    <ClCompile Include="exceptions\SystemException.cpp">
+      <Filter>Source Files\exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="GC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gcptr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\File.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\FileStream.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\Stream.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\StreamReaderCXX.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\StreamWriterCXX.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\TextReader.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\TextWriter.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Text\StringBuilder.cpp">
+      <Filter>Source Files\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Text\UTF8Encoding.cpp">
+      <Filter>Source Files\Text</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Collections\Generic\IEnumerable.h">
+      <Filter>Header Files\Collections\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="Collections\Generic\IEnumeratorCXX.h">
+      <Filter>Header Files\Collections\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="Collections\Generic\IteratorCXX.h">
+      <Filter>Header Files\Collections\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="Collections\Generic\List.h">
+      <Filter>Header Files\Collections\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="Collections\IEnumerable.h">
+      <Filter>Header Files\Collections</Filter>
+    </ClInclude>
+    <ClInclude Include="Collections\IEnumeratorCXX.h">
+      <Filter>Header Files\Collections</Filter>
+    </ClInclude>
+    <ClInclude Include="Collections\IteratorCXX.h">
+      <Filter>Header Files\Collections</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="constraints\constraintsSupport.h">
+      <Filter>Header Files\constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Convert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Delegate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\exceptionSupport.h">
+      <Filter>Header Files\exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\systemException\argumentException\ArgumentNullException.h">
+      <Filter>Header Files\exceptions\systemException\argumentException</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\systemException\argumentException\ArgumentOutOfRangeException.h">
+      <Filter>Header Files\exceptions\systemException\argumentException</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\systemException\ArgumentException.h">
+      <Filter>Header Files\exceptions\systemException</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\systemException\InvalidOperationException.h">
+      <Filter>Header Files\exceptions\systemException</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\systemException\NotImplementedException.h">
+      <Filter>Header Files\exceptions\systemException</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions\SystemException.h">
+      <Filter>Header Files\exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="GC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gcptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IDisposable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\File.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\FileAccess.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\FileMode.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\FileOptions.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\FileShare.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\FileStream.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\Stream.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\StreamReaderCXX.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\StreamWriterCXX.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\TextReader.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\TextWriter.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\Net.h">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="support.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="templates\asis.h">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="templates\Boxing.h">
+      <Filter>Header Files\templates</Filter>
+    </ClInclude>
+    <ClInclude Include="templates\internal\Boxing.h">
+      <Filter>Header Files\templates\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="templates\internal\TypeRefs.h">
+      <Filter>Header Files\templates\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="templates\internal\TypeTraits.h">
+      <Filter>Header Files\templates\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="Text\StringBuilder.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Text\UTF8Encoding.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files\exceptions">
+      <UniqueIdentifier>{022BF564-FCBF-4AE2-99F7-BBDC6497AC29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IO">
+      <UniqueIdentifier>{1DE197CB-3724-46AF-A9B6-AC522140B212}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Text">
+      <UniqueIdentifier>{F49E06B9-18B9-4BE6-9CEC-A07DF17ECE19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2DABF6D3-580D-4D7D-8D11-E16431C471DE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{57393CED-6B82-4CC6-8EFF-811204367A6E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Collections">
+      <UniqueIdentifier>{F2D1F65E-9AB7-4062-88A5-259D1AD2247D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\constraints">
+      <UniqueIdentifier>{9E21190C-5709-40D0-9A14-D5BF051ACF94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\exceptions">
+      <UniqueIdentifier>{BB3E2E9B-5011-487B-97D7-88DB56016741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\IO">
+      <UniqueIdentifier>{1CB68E53-C909-4CD5-B0D3-358B8FC61AF7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Net">
+      <UniqueIdentifier>{1527F6EC-491D-4D80-8C61-DF73347E5C5A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\templates">
+      <UniqueIdentifier>{D31EC2E5-7C9C-4551-9A88-4277D4271449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Text">
+      <UniqueIdentifier>{0DBB4504-80A7-4AC2-8795-BE329FD75B0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\exceptions\systemException\argumentException">
+      <UniqueIdentifier>{EE4481B8-F7ED-4036-AFAA-00042AE78D81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\exceptions\systemException">
+      <UniqueIdentifier>{5BB03663-FBF9-4AC2-B784-949C493449D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Collections\Generic">
+      <UniqueIdentifier>{D631BF60-21D4-4E40-83B3-4AA4235BE920}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\exceptions\systemException">
+      <UniqueIdentifier>{972490A0-0B5F-4639-98BA-A664749C6042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\exceptions\systemException\argumentException">
+      <UniqueIdentifier>{E0C95760-96F2-46D7-80F5-C95C1D6EA5BB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\templates\internal">
+      <UniqueIdentifier>{7204A73B-DBB0-41F5-94B4-B1C6FEAB5363}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,4 @@
+C:/Users/Alex/Desktop/AlterNative/Lib/build/System/CMakeFiles/ALL_BUILD.dir
+C:/Users/Alex/Desktop/AlterNative/Lib/build/System/CMakeFiles/System.dir
+C:/Users/Alex/Desktop/AlterNative/Lib/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Alex/Desktop/AlterNative/Lib/build/gc/CMakeFiles/gc-lib.dir

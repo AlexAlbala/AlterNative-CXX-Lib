@@ -1,0 +1,64 @@
+﻿Build started 25/10/2013 14:20:42.
+     1>Project "C:\Users\Alex\Desktop\AlterNative\Lib\build\gc\gc-lib.vcxproj" on node 3 (Build target(s)).
+     1>CustomBuild:
+         Building Custom Rule C:/Users/Alex/Desktop/AlterNative/Lib/src/gc/CMakeLists.txt
+         CMake does not need to re-run because C:\Users\Alex\Desktop\AlterNative\Lib\build\gc\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:/Users/Alex/Desktop/AlterNative/Lib/src/gc/include /IC:/Users/Alex/Desktop/AlterNative/Lib/src/gc/libatomic_ops/src /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _CRT_SECURE_NO_DEPRECATE /D ALL_INTERIOR_POINTERS /D GC_BUILD /D LARGE_CONFIG /D GC_NOT_DLL /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"gc-lib.dir\Debug\\" /Fd"C:/Users/Alex/Desktop/AlterNative/Lib/build/gc/Debug/gc-lib.pdb" /Gd /TC /analyze- /errorReport:prompt  /Zm1000 C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\alloc.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\reclaim.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\allchblk.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\misc.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\mach_dep.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\os_dep.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\mark_rts.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\headers.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\mark.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\obj_map.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\blacklst.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\finalize.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\new_hblk.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\dbg_mlc.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\malloc.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\stubborn.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\dyn_load.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\typd_mlc.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\ptr_chck.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\mallocx.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\checksums.c C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\thread_local_alloc.c
+         alloc.c
+         reclaim.c
+         allchblk.c
+         misc.c
+         mach_dep.c
+         os_dep.c
+         mark_rts.c
+         headers.c
+         mark.c
+         obj_map.c
+         blacklst.c
+         finalize.c
+         new_hblk.c
+         dbg_mlc.c
+         malloc.c
+         stubborn.c
+         dyn_load.c
+         typd_mlc.c
+         ptr_chck.c
+         mallocx.c
+         Generating Code...
+         Compiling...
+         checksums.c
+         thread_local_alloc.c
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:/Users/Alex/Desktop/AlterNative/Lib/src/gc/include /IC:/Users/Alex/Desktop/AlterNative/Lib/src/gc/libatomic_ops/src /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _CRT_SECURE_NO_DEPRECATE /D ALL_INTERIOR_POINTERS /D GC_BUILD /D LARGE_CONFIG /D GC_NOT_DLL /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"gc-lib.dir\Debug\\" /Fd"C:/Users/Alex/Desktop/AlterNative/Lib/build/gc/Debug/gc-lib.pdb" /Gd /TP /analyze- /errorReport:prompt  /Zm1000 C:\Users\Alex\Desktop\AlterNative\Lib\src\gc\gc_cpp.cc
+         gc_cpp.cc
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Alex\Desktop\AlterNative\Lib\build\gc\Debug\gc-lib.lib" /NOLOGO "gc-lib.dir\Debug\alloc.obj"
+         "gc-lib.dir\Debug\reclaim.obj"
+         "gc-lib.dir\Debug\allchblk.obj"
+         "gc-lib.dir\Debug\misc.obj"
+         "gc-lib.dir\Debug\mach_dep.obj"
+         "gc-lib.dir\Debug\os_dep.obj"
+         "gc-lib.dir\Debug\mark_rts.obj"
+         "gc-lib.dir\Debug\headers.obj"
+         "gc-lib.dir\Debug\mark.obj"
+         "gc-lib.dir\Debug\obj_map.obj"
+         "gc-lib.dir\Debug\blacklst.obj"
+         "gc-lib.dir\Debug\finalize.obj"
+         "gc-lib.dir\Debug\new_hblk.obj"
+         "gc-lib.dir\Debug\dbg_mlc.obj"
+         "gc-lib.dir\Debug\malloc.obj"
+         "gc-lib.dir\Debug\stubborn.obj"
+         "gc-lib.dir\Debug\dyn_load.obj"
+         "gc-lib.dir\Debug\typd_mlc.obj"
+         "gc-lib.dir\Debug\ptr_chck.obj"
+         "gc-lib.dir\Debug\gc_cpp.obj"
+         "gc-lib.dir\Debug\mallocx.obj"
+         "gc-lib.dir\Debug\checksums.obj"
+         "gc-lib.dir\Debug\thread_local_alloc.obj"
+         gc-lib.vcxproj -> C:\Users\Alex\Desktop\AlterNative\Lib\build\gc\Debug\gc-lib.lib
+     1>Done Building Project "C:\Users\Alex\Desktop\AlterNative\Lib\build\gc\gc-lib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.06

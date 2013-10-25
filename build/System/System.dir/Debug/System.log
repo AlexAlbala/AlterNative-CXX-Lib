@@ -1,0 +1,83 @@
+﻿Build started 25/10/2013 14:31:06.
+     1>Project "C:\Users\Alex\Desktop\AlterNative\Lib\build\System\System.vcxproj" on node 2 (Build target(s)).
+     1>CTP_Warning:
+         'Microsoft Visual C++ Compiler Nov 2012 CTP' is for testing purposes only.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2012 CTP\bin\CL.exe /c /I"C:/Boost/include/boost-1_52" /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"System.dir\Debug\\" /Fd"C:/Users/Alex/Desktop/AlterNative/Lib/build/System/Debug/System.pdb" /Gd /TP /analyze- /errorReport:prompt  /Zm1000 C:\Users\Alex\Desktop\AlterNative\Lib\src\System\Console.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\Exception.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\File.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\FileStream.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\StreamReaderCXX.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\StreamWriterCXX.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\TextReader.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\TextWriter.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\Math.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\Object.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\String.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\Text\StringBuilder.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\Text\UTF8Encoding.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\exceptions\SystemException.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\exceptions\systemException\ArgumentException.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\exceptions\systemException\InvalidOperationException.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\exceptions\systemException\NotImplementedException.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\exceptions\systemException\argumentException\ArgumentNullException.cpp C:\Users\Alex\Desktop\AlterNative\Lib\src\System\exceptions\systemException\argumentException\ArgumentOutOfRangeException.cpp
+         Console.cpp
+         Exception.cpp
+         File.cpp
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\File.cpp(8): warning C4800: 'void *' : forcing value to bool 'true' or 'false' (performance warning)
+         FileStream.cpp
+         StreamReaderCXX.cpp
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\StreamReaderCXX.cpp(48): warning C4244: 'initializing' : conversion from 'std::streamoff' to 'int', possible loss of data
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\StreamReaderCXX.cpp(84): warning C4244: 'initializing' : conversion from 'std::streamoff' to 'int', possible loss of data
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\StreamReaderCXX.cpp(87): warning C4244: 'initializing' : conversion from 'std::streamoff' to 'int', possible loss of data
+         StreamWriterCXX.cpp
+         TextReader.cpp
+         TextWriter.cpp
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\TextWriter.cpp(62): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\TextWriter.cpp(68): warning C4800: 'const char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\TextWriter.cpp(160): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\IO\TextWriter.cpp(167): warning C4800: 'const char *' : forcing value to bool 'true' or 'false' (performance warning)
+         Math.cpp
+         Object.cpp
+         String.cpp
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\String.cpp(14): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\String.cpp(23): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+     1>C:\Users\Alex\Desktop\AlterNative\Lib\src\System\String.cpp(41): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : see declaration of 'strncpy'
+         StringBuilder.cpp
+         UTF8Encoding.cpp
+         SystemException.cpp
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\SystemException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         ArgumentException.cpp
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\systemexception\ArgumentException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\systemexception\../SystemException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         InvalidOperationException.cpp
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\systemexception\InvalidOperationException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\systemexception\../SystemException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         NotImplementedException.cpp
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\systemexception\NotImplementedException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\systemexception\../SystemException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         ArgumentNullException.cpp
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\systemexception\argumentexception\../ArgumentException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\systemexception\../SystemException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         ArgumentOutOfRangeException.cpp
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\systemexception\argumentexception\../ArgumentException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\alex\desktop\alternative\lib\src\system\exceptions\systemexception\../SystemException.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         Generating Code...
+     1>c:\users\alex\desktop\alternative\lib\src\system\text\stringbuilder.cpp(9): warning C4717: 'System::Text::StringBuilder::StringBuilder' : recursive on all control paths, function will cause runtime stack overflow
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Alex\Desktop\AlterNative\Lib\build\System\Debug\System.lib" /NOLOGO System.dir\Debug\Console.obj
+         System.dir\Debug\Convert.obj
+         System.dir\Debug\Exception.obj
+         System.dir\Debug\ArgumentNullException.obj
+         System.dir\Debug\ArgumentOutOfRangeException.obj
+         System.dir\Debug\ArgumentException.obj
+         System.dir\Debug\InvalidOperationException.obj
+         System.dir\Debug\NotImplementedException.obj
+         System.dir\Debug\SystemException.obj
+         System.dir\Debug\GC.obj
+         System.dir\Debug\gcptr.obj
+         System.dir\Debug\File.obj
+         System.dir\Debug\FileStream.obj
+         System.dir\Debug\Stream.obj
+         System.dir\Debug\StreamReaderCXX.obj
+         System.dir\Debug\StreamWriterCXX.obj
+         System.dir\Debug\TextReader.obj
+         System.dir\Debug\TextWriter.obj
+         System.dir\Debug\Math.obj
+         System.dir\Debug\Object.obj
+         System.dir\Debug\Random.obj
+         System.dir\Debug\String.obj
+         System.dir\Debug\StringBuilder.obj
+         System.dir\Debug\UTF8Encoding.obj
+         System.vcxproj -> C:\Users\Alex\Desktop\AlterNative\Lib\build\System\Debug\System.lib
+     1>Done Building Project "C:\Users\Alex\Desktop\AlterNative\Lib\build\System\System.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:57.38

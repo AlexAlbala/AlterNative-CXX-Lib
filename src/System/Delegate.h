@@ -3,66 +3,69 @@
 
 using namespace boost::signals2;
 namespace System{
-	template<typename RType, typename... Arguments>
+	namespace __Internal__{
+		template<typename RType, typename... Arguments>
+		class _Delegate
+		{
+		public:
+			signal<TypeDecl(RType) (Arguments ...)> _target;	
+		
+
+		public:
+			_Delegate()
+			{
+				_target();
+			}
+		
+			_Delegate(boost::function<TypeDecl(RType) (Arguments ...)> target)
+			{
+				_target.connect(target);
+			}
+
+		
+			TypeDecl(RType) Invoke(Arguments... args)
+			{	
+				boost::optional<TypeDecl(RType)> opt = _target(args...);
+				return opt.get_value_or(null);
+			}
+		};
+	
+		template<typename... Arguments>
+		class _Delegate<void, Arguments...> : public Delegate
+		{
+		public:
+			signal<void (Arguments ...)> _target;	
+		
+
+		public:
+			_Delegate()
+			{
+				_target();
+			}
+		
+			_Delegate(boost::function<void (Arguments ...)> target)
+			{
+				_target.connect(target);
+			}
+
+		
+			void Invoke(Arguments... args)
+			{	
+				_target(args...);
+			}	
+		
+		};
+	}
+
 	class Delegate
 	{
-	private:
-		signal<TypeDecl(RType) (Arguments ...)> _target;	
-		
-
 	public:
-		Delegate()
-		{
-			_target();
-		}
-		
-		Delegate(boost::function<TypeDecl(RType) (Arguments ...)> target)
-		{
-			_target.connect(target);
-		}
-
-		
-		TypeDecl(RType) Invoke(Arguments... args)
-		{	
-			boost::optional<TypeDecl(RType)> opt = _target(args...);
-			return opt.get_value_or(null);
-		}
-	
-		static Delegate* Combine(Delegate* one, Delegate* other)
-		{
+		template<typename A, typename... B>
+		static Delegate* Combine(__Internal__::_Delegate<A,B...>* one, __Internal__::_Delegate<A,B...>* other)
+		{			
 			one->_target.connect(other->_target);
-			return one;
-		}
-	};
-	
-	template<typename... Arguments>
-	class Delegate<void, Arguments...>
-	{
-	private:
-		signal<void (Arguments ...)> _target;	
-		
-
-	public:
-		Delegate()
-		{
-			_target();
+			return one;		
 		}
 		
-		Delegate(boost::function<void (Arguments ...)> target)
-		{
-			_target.connect(target);
-		}
-
-		
-		void Invoke(Arguments... args)
-		{	
-			_target(args...);
-		}
-	
-		static Delegate* Combine(Delegate* one, Delegate* other)
-		{
-			one->_target.connect(other->_target);
-			return one;
-		}
 	};
 }

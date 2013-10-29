@@ -21,36 +21,48 @@ namespace System{
 			_target.connect(target);
 		}
 
+		
 		TypeDecl(RType) Invoke(Arguments... args)
 		{	
-			return _target(args...);
+			boost::optional<TypeDecl(RType)> opt = _target(args...);
+			return opt.get_value_or(null);
 		}
-
-		/*operator + (Delegate* other)
+	
+		static Delegate* Combine(Delegate* one, Delegate* other)
 		{
-			_target.connect(other->_target);
+			one->_target.connect(other->_target);
+			return one;
 		}
+	};
+	
+	template<typename... Arguments>
+	class Delegate<void, Arguments...>
+	{
+	private:
+		signal<void (Arguments ...)> _target;	
+		
 
-		operator - (Delegate* other)
+	public:
+		Delegate()
 		{
-			_target.disconnect(other->_target);
-		}*/
-		/*
-		Delegate<RType,Arguments...>* operator ()()
-		{
-			Invoke();
-			return this;
+			_target();
 		}
 		
-		Delegate<RType,Arguments...>* operator ()(Arguments... args)
+		Delegate(boost::function<void (Arguments ...)> target)
 		{
-			this->Invoke(args...);
-			return this;
-		}*/
+			_target.connect(target);
+		}
+
 		
-		static Delegate<RType,Arguments...>* Combine(Delegate* one, Delegate* other)
+		void Invoke(Arguments... args)
+		{	
+			_target(args...);
+		}
+	
+		static Delegate* Combine(Delegate* one, Delegate* other)
 		{
-			throw new NotImplementedException();
+			one->_target.connect(other->_target);
+			return one;
 		}
 	};
 }

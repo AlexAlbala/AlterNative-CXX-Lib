@@ -1,4 +1,4 @@
-﻿Build started 25/10/2013 14:31:06.
+﻿Build started 28/10/2013 16:04:19.
      1>Project "C:\Users\Alex\Desktop\AlterNative\Lib\build\System\System.vcxproj" on node 2 (Build target(s)).
      1>CTP_Warning:
          'Microsoft Visual C++ Compiler Nov 2012 CTP' is for testing purposes only.
@@ -80,4 +80,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:57.38
+Time Elapsed 00:00:57.70

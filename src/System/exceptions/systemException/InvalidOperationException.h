@@ -1,5 +1,5 @@
 #pragma once
-#include "../SystemException.h";
+#include "../SystemException.h"
 
 namespace System{
 	class String;

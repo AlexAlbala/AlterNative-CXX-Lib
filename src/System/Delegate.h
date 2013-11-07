@@ -1,5 +1,6 @@
 #pragma once
 #include <boost/signals2/signal.hpp>
+#include "System.h"
 
 namespace __Internal__{
 	template<typename A, typename... B>
@@ -65,12 +66,10 @@ using namespace boost::signals2;
                     {
                             this->_target.connect(target);
                     }
-
                 
                     void Invoke(Arguments... args)
                     {        
                             this->_target(args...);
-                    }        
-                
+                    }               
             };
     }

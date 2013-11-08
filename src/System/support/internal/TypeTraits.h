@@ -1,3 +1,5 @@
+#pragma once
+#include <tuple>
 
 /*********************************************************************************************************/
 /*********************************** ISFUNDAMENTALTYPE TEMPLATES  ****************************************/
@@ -69,6 +71,27 @@ namespace __Internal__{
 	template<>
 	struct IsVoidType<void> {
 		enum { result = true };
+	};
+}
+
+/*********************************************************************************************************/
+/*************************************** VARIADIC CONVERSIONS  *******************************************/
+/*********************************************************************************************************/
+namespace __Internal__{
+	template<typename... Arguments>
+	struct variadic_typedef
+	{};
+
+	template<typename... Arguments>
+	struct convert_in_tuple
+	{
+		typedef  std::tuple<Arguments...> _type;
+	};
+
+	template<typename... Arguments>
+	struct convert_in_tuple<variadic_typedef<Arguments...>>
+	{
+		typedef typename convert_in_tuple<Arguments...>::_type type;
 	};
 }
 

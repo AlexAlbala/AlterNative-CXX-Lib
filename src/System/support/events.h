@@ -3,7 +3,5 @@
 /*********************************************************************************************************/
 /************************************************ EVENTS  ************************************************/
 /*********************************************************************************************************/
-#define EVENT(del, name)					__Internal__::_event* name = new __Internal__::_event(); \
-											name->setDelegate(del);
-
+#define EVENT(del, name)					__Internal__::Event* name = __Internal__::Event::CreateEvent(del);
 #define EVENT_FIRE(eventName,...)			eventName->fireEvent( __VA_ARGS__ )

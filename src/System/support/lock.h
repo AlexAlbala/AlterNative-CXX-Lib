@@ -4,6 +4,14 @@
 /************************************************ LOCK  **************************************************/
 /*********************************************************************************************************/
 
+//TODO: Change this-> use boost synchronization library
+/*link: http://www.boost.org/doc/libs/1_54_0/doc/html/thread/synchronization.html*/
+//
+//
+//lock();
+//try_lock();
+//unlock();
+
 #if _WIN32
 #define an_init_lock(x)						__win_init_lock(x)
 #elif LINUX

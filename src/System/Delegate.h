@@ -11,7 +11,8 @@ namespace System{
     class Delegate
     {
 	friend class _event;
-    public:
+    public:		    
+
             template<typename A, typename... B>
             static Delegate* Combine(__Internal__::_Delegate<A,B...>* one, __Internal__::_Delegate<A,B...>* other)
             {                        
@@ -25,12 +26,6 @@ namespace System{
                     one->_target.connect(other->_target);
                     return one;                
             }
-
-	private:
-			void addTarget(Delegate* newTarget)
-			{
-				
-			}
                 
     };
 }
@@ -60,7 +55,7 @@ using namespace boost::signals2;
                     {        
                             boost::optional<TypeDecl(RType)> opt = this->_target(args...);
                             return opt.get_value_or(null);
-                    }			
+                    }
             };
         
             template<typename... Arguments>
@@ -78,13 +73,12 @@ using namespace boost::signals2;
                 
                     _Delegate(boost::function<void (Arguments ...)> target)
                     {
-                            this->_target.connect(target);
+                            this->_target.connect(target);							
                     }
                 
                     void Invoke(Arguments... args)
                     {        
                             this->_target(args...);
-                    }      
-         
+                    }
             };
     }

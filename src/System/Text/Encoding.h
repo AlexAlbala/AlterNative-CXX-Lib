@@ -14,5 +14,11 @@ namespace System{
 				};
 
 		};
+
+		class UTF8Encoding : public Object, public gc_cleanup {
+		public:
+			String* GetString(Array<byte>* input);
+			Array<byte>* GetBytes(String* input);
+		};
 	}
 }

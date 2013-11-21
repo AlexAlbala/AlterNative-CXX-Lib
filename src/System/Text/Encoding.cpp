@@ -29,5 +29,15 @@ namespace System{
 		{        
 			return GetString(bytes->GetData());
 		}
+
+		String* UTF8Encoding::GetString(Array<byte>* input)
+		{
+			return Encoding::UTF8::GetString(input->GetData());
+		}
+
+		Array<byte>* UTF8Encoding::GetBytes(String* input)
+		{
+			return Encoding::UTF8::GetBytes(input);
+		}
 	}
 }

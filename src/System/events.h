@@ -9,18 +9,51 @@ namespace __Internal__{
 	{
 	public:
 		template<typename A, typename... B>
-		static Event* CreateEvent(__Internal__::_Delegate<A,B...>* del)
+		static _event<A, B...> CreateEvent(__Internal__::_Delegate<A,B...>* del)
 		{
-			_event<A, B..>* ev = new _event<A,B..>();
-			ev->setDelegate(del);
-			return dynamic_cast<Event*>(ev);
+			_event<A, B...>* ev = new _event<A,B...>();
+
+			if(del != null)
+			{
+				ev->setDelegate(del);
+			}
+			return *(ev);
+		}
+
+		/*template<typename A, typename... B>
+		Event* operator += (__Internal__::_Delegate<A,B...>* other)
+		{	
+			return this->add(other);
+		}
+		
+		template<typename A, typename... B>
+		Event* operator -= (__Internal__::_Delegate<A,B...>* other)
+		{
+			return this->remove(other);
 		}
 
 		template<typename A, typename... B>
-		void fireEvent(_event<A,B...> ev, B... args)
-		{
-			ev->fireEvent(args...);
+		Event* add (__Internal__::_Delegate<A,B...>* other)
+		{	
+			_event<A,B...>* _this = dynamic_cast<_event<A,B...>*>(this);
+			_this->add(other);
+			return _this;
 		}
+		
+		template<typename A, typename... B>
+		Event* remove (__Internal__::_Delegate<A,B...>* other)
+		{
+			_event<A,B...>* _this = dynamic_cast<_event<A,B...>*>(this);
+			_this->remove(other);
+			return _this;
+		}*/
+
+	/*public:
+		template<typename A, typename... B>
+		static A fireEvent(_event<A,B...>* ev, B... args)
+		{			
+			return ev->fireEvent(args...);
+		}*/
 	};
 
 	template<typename A, typename... B>
@@ -30,27 +63,63 @@ namespace __Internal__{
 		__Internal__::_Delegate<A,B...>* internalDelegate;
 
 	public:
+
+		_event()
+		{
+			internalDelegate = null;
+		}
+
+		~_event()
+		{
+			delete internalDelegate;
+		}
+
 		void setDelegate(__Internal__::_Delegate<A,B...>* internalDelegate)
 		{		
 			this->internalDelegate = internalDelegate;
 		}
 
-		_event& operator += (const _event& other)
+		_event* add (__Internal__::_Delegate<A,B...>* other)
 		{	
-			internalDelegate = System::Delegate::Combine(internalDelegate, other.internalDelegate);
-			return *this;
+			if(internalDelegate != null)
+			{
+				internalDelegate = (__Internal__::_Delegate<A,B...>*)System::Delegate::Combine(internalDelegate, other);
+			}
+			else
+			{
+				internalDelegate = other;
+			}
+			return this;
 		}
 		
-		_event& operator -= (const _event& other)
+		_event* remove (__Internal__::_Delegate<A,B...>* other)
 		{
 			//TODO
-			return *this;
+			return this;
 		}
 
-	protected:
-		void fireEvent(B... args) 
+		_event* operator += (__Internal__::_Delegate<A,B...>* other)
+		{	
+			return this->add(other);
+		}
+		
+		_event* operator -= (__Internal__::_Delegate<A,B...>* other)
 		{
-			internalDelegate->Invoke(args...);
+			return this->remove(other);
+		}
+
+		operator _event*()
+		{
+			return this;
+		}
+
+	public:
+		A fireEvent(B... args) 
+		{
+			if(internalDelegate != null)
+			{
+				return internalDelegate->Invoke(args...);
+			}			
 		}		
 	};	
 }

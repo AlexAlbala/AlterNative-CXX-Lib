@@ -16,17 +16,36 @@ namespace System{
             template<typename A, typename... B>
             static Delegate* Combine(__Internal__::_Delegate<A,B...>* one, __Internal__::_Delegate<A,B...>* other)
             {                        
-                    one->_target.connect(other->_target);
-                    return one;                
+				if(one == null)
+					one = new __Internal__::_Delegate<A,B...>();
+
+                one->_target.connect(other->_target);
+                return one;                
             }
 
 			template<typename A, typename... B>
             static Delegate* Combine(__Internal__::_Delegate<A,B...>* one, const __Internal__::_Delegate<A,B...>* other)
-            {                        
-                    one->_target.connect(other->_target);
-                    return one;                
+            {
+				if(one == null)
+					one = new __Internal__::_Delegate<A,B...>();
+
+                one->_target.connect(other->_target);
+                return one;                
             }
-                
+
+			template<typename A, typename... B>
+            static Delegate* Remove(__Internal__::_Delegate<A,B...>* one, __Internal__::_Delegate<A,B...>* other)
+            {                        
+                one->_target.disconnect(&other->_target);
+                return one;
+            }
+
+			template<typename A, typename... B>
+            static Delegate* Remove(__Internal__::_Delegate<A,B...>* one, const __Internal__::_Delegate<A,B...>* other)
+            {                        
+                one->_target.disconnect(&other->_target);
+                return one;
+			}                
     };
 }
 
@@ -36,49 +55,44 @@ using namespace boost::signals2;
             class _Delegate : public System::Delegate
             {
             public:
-                    signal<TypeDecl(RType) (Arguments ...)> _target;        
-                
-
+                    signal<TypeDecl(RType) (Arguments ...)> _target;
             public:
-                    _Delegate()
-                    {
-                            this->_target();
-                    }
+                _Delegate()
+                {
+                    this->_target();
+                }
                 
-                    _Delegate(boost::function<TypeDecl(RType) (Arguments ...)> target)
-                    {
-                            this->_target.connect(target);
-                    }
+                _Delegate(boost::function<TypeDecl(RType) (Arguments ...)> target)
+                {
+                    this->_target.connect(target);
+                }
 
                 
-                    TypeDecl(RType) Invoke(Arguments... args)
-                    {        
-                            boost::optional<TypeDecl(RType)> opt = this->_target(args...);
-                            return opt.get_value_or(null);
-                    }
+                TypeDecl(RType) Invoke(Arguments... args)
+                {        
+                    boost::optional<TypeDecl(RType)> opt = this->_target(args...);
+                    return opt.get_value_or(null);
+                }
             };
         
             template<typename... Arguments>
             class _Delegate<void, Arguments...> : public System::Delegate
             {
             public:
-                    signal<void (Arguments ...)> _target;        
-                
-
+                signal<void (Arguments ...)> _target;
             public:
-                    _Delegate()
-                    {
-                            this->_target();
-                    }
+                _Delegate()
+                {                        
+                }
                 
-                    _Delegate(boost::function<void (Arguments ...)> target)
-                    {
-                            this->_target.connect(target);							
-                    }
+                _Delegate(boost::function<void (Arguments ...)> target)
+                {
+                    this->_target.connect(target);							
+                }
                 
-                    void Invoke(Arguments... args)
-                    {        
-                            this->_target(args...);
-                    }
+                void Invoke(Arguments... args)
+                {        
+                    this->_target(args...);
+                }
             };
     }

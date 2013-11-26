@@ -45,7 +45,7 @@ namespace System{
             {                        
                 one->_target.disconnect(&other->_target);
                 return one;
-			}                
+			}
     };
 }
 
@@ -53,20 +53,18 @@ using namespace boost::signals2;
     namespace __Internal__{
             template<typename RType, typename... Arguments>
             class _Delegate : public System::Delegate
-            {
+            {			
             public:
-                    signal<TypeDecl(RType) (Arguments ...)> _target;
+                signal<TypeDecl(RType) (Arguments ...)> _target;
             public:
                 _Delegate()
-                {
-                    this->_target();
+                {                    
                 }
                 
                 _Delegate(boost::function<TypeDecl(RType) (Arguments ...)> target)
                 {
                     this->_target.connect(target);
                 }
-
                 
                 TypeDecl(RType) Invoke(Arguments... args)
                 {        
@@ -77,7 +75,7 @@ using namespace boost::signals2;
         
             template<typename... Arguments>
             class _Delegate<void, Arguments...> : public System::Delegate
-            {
+            {				
             public:
                 signal<void (Arguments ...)> _target;
             public:
@@ -94,5 +92,5 @@ using namespace boost::signals2;
                 {        
                     this->_target(args...);
                 }
-            };
+            };			
     }

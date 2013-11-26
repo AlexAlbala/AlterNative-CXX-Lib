@@ -6,7 +6,7 @@
 #include <fstream>
 #include <exception>
 #include "../Text/Encoding.h"
-#include "../exceptions/systemException/argumentException/ArgumentNullException.h"
+#include "../Exception/SystemException/ArgumentException/ArgumentNullException.h"
 
 namespace System{
 	namespace IO{

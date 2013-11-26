@@ -19,7 +19,7 @@ namespace System{
 				if(one == null)
 					one = new __Internal__::_Delegate<A,B...>();
 
-                one->_target.connect(other->_target);
+				one->CombineWith(other);
                 return one;                
             }
 
@@ -29,21 +29,21 @@ namespace System{
 				if(one == null)
 					one = new __Internal__::_Delegate<A,B...>();
 
-                one->_target.connect(other->_target);
+                one->CombineWith(other);
                 return one;                
             }
 
 			template<typename A, typename... B>
             static Delegate* Remove(__Internal__::_Delegate<A,B...>* one, __Internal__::_Delegate<A,B...>* other)
             {                        
-                one->_target.disconnect(&other->_target);
+                one->Remove(other);
                 return one;
             }
 
 			template<typename A, typename... B>
             static Delegate* Remove(__Internal__::_Delegate<A,B...>* one, const __Internal__::_Delegate<A,B...>* other)
             {                        
-                one->_target.disconnect(&other->_target);
+                one->Remove(other);
                 return one;
 			}
     };
@@ -65,6 +65,16 @@ using namespace boost::signals2;
                 {
                     this->_target.connect(target);
                 }
+
+				void CombineWith(_Delegate* other)
+				{
+					_target.connect(&other->_target);
+				}
+
+				void Remove(_Delegate* other)
+				{
+					_target.disconnect(&other->_target);
+				}
                 
                 TypeDecl(RType) Invoke(Arguments... args)
                 {        
@@ -87,6 +97,16 @@ using namespace boost::signals2;
                 {
                     this->_target.connect(target);							
                 }
+
+				void CombineWith(_Delegate* other)
+				{
+					_target.connect(other->_target);
+				}
+
+				void Remove(_Delegate* other)
+				{
+					_target.disconnect(&other->_target);
+				}
                 
                 void Invoke(Arguments... args)
                 {        

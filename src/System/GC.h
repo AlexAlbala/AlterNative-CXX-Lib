@@ -9,5 +9,6 @@ namespace System{
 	{
 	public:	
 		static void Collect();
+		static void SuppressFinalize();
 	};
 }

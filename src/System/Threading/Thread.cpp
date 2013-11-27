@@ -7,10 +7,24 @@
 namespace System{
 	namespace Threading{
 
-		/*Thread::Thread(ThreadStart* del)
+		ThreadStart::ThreadStart()
+		{
+		}
+
+		ThreadStart::ThreadStart(boost::function<void ()> target)
+		{
+			this->functor = target;
+		}
+
+		ThreadStart::operator boost::function<void ()>()
+		{
+			return this->functor;
+		}
+
+		Thread::Thread(ThreadStart* target)
 		{			
-			//functor = &del->_target;
-		}*/
+			functor = *target;
+		}
 
 		void Thread::Sleep(int milliseconds)
 		{
@@ -25,9 +39,8 @@ namespace System{
 		}
 
 		void Thread::Start()
-		{			
-			//NOT WORKING!!
-			//workerThread = boost::thread(this->functor);
+		{	
+			workerThread = boost::thread(this->functor.functor);
 		}
 
 		void Thread::Join()

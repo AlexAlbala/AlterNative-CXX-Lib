@@ -5,4 +5,9 @@ namespace System{
 		//TODO
 		//DO NOTHING
 	}
+
+	void GC::SuppressFinalize(){	
+		//TODO
+		//DO NOTHING
+	}
 }

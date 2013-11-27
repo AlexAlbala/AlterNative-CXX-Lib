@@ -4,6 +4,7 @@
 
 namespace System{
 	
+	//Forward declarations
 	template<typename T>
 	class Box_T;
 
@@ -17,6 +18,8 @@ namespace System{
 		Object(void);
 		~Object(void);
 		virtual String* ToString(void);
+		
+		//boost::mutex mutex;
 	};
 }
 

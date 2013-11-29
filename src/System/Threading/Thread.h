@@ -6,17 +6,29 @@
 
 namespace System{
 	namespace Threading{
-				
+
 		class ThreadStart : public Delegate
 		{
 			friend class Thread;
 		public:
-			ThreadStart(boost::function<void()> target);			
+			ThreadStart(boost::function<void()> target);
 
 		private:
 			ThreadStart();
 			boost::function<void ()> functor;
 			operator boost::function<void()>();
+		};
+
+		class ParameterizedThreadStart : public Delegate
+		{
+			friend class Thread;
+		public:
+			ParameterizedThreadStart(boost::function<void (System::Object*)> target);
+
+		private:
+			ParameterizedThreadStart();
+			boost::function<void (System::Object*)> functor;
+			operator boost::function<void (System::Object*)>();
 		};
 
 
@@ -26,6 +38,7 @@ namespace System{
 			ThreadStart functor;
 		public:
 			Thread(ThreadStart* target);
+			Thread(ParameterizedThreadStart* target);
 			void Start();
 			void Join();
 			void Abort();

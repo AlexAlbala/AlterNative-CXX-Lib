@@ -6,7 +6,7 @@ namespace System{
 		//DO NOTHING
 	}
 
-	void GC::SuppressFinalize(){	
+	void GC::SuppressFinalize(Object* obj){	
 		//TODO
 		//DO NOTHING
 	}

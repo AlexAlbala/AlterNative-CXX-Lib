@@ -7,5 +7,6 @@ namespace System{
 	public:
 		ArgumentOutOfRangeException();
 		ArgumentOutOfRangeException(String* message);
+		ArgumentOutOfRangeException(String* parameter, String* variable);
 	};
 }

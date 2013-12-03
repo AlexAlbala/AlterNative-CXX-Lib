@@ -55,5 +55,5 @@
 #define an_end_sync()						__an_mtx.unlock()
 
 #define an_lock(x)							x->mutex.lock()
-#define an_obj_end_lock(x)					x->mutex.unlock()
+#define an_end_lock(x)						x->mutex.unlock()
 //#define an_destroy_lock()					__win_destroy_lock(x)

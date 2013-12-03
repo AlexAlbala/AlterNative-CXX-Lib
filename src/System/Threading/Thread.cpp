@@ -21,6 +21,20 @@ namespace System{
 			return this->functor;
 		}
 
+		ParameterizedThreadStart::ParameterizedThreadStart()
+		{
+		}
+
+		ParameterizedThreadStart::ParameterizedThreadStart(boost::function<void (System::Object*)> target)
+		{
+			this->functor = target;
+		}
+
+		ParameterizedThreadStart::operator boost::function<void (System::Object*)>()
+		{
+			return this->functor;
+		}
+
 		Thread::Thread(ThreadStart* target)
 		{			
 			functor = *target;

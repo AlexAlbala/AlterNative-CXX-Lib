@@ -19,41 +19,6 @@ namespace __Internal__{
 			}
 			return *(ev);
 		}
-
-		/*template<typename A, typename... B>
-		Event* operator += (__Internal__::_Delegate<A,B...>* other)
-		{	
-			return this->add(other);
-		}
-		
-		template<typename A, typename... B>
-		Event* operator -= (__Internal__::_Delegate<A,B...>* other)
-		{
-			return this->remove(other);
-		}
-
-		template<typename A, typename... B>
-		Event* add (__Internal__::_Delegate<A,B...>* other)
-		{	
-			_event<A,B...>* _this = dynamic_cast<_event<A,B...>*>(this);
-			_this->add(other);
-			return _this;
-		}
-		
-		template<typename A, typename... B>
-		Event* remove (__Internal__::_Delegate<A,B...>* other)
-		{
-			_event<A,B...>* _this = dynamic_cast<_event<A,B...>*>(this);
-			_this->remove(other);
-			return _this;
-		}*/
-
-	/*public:
-		template<typename A, typename... B>
-		static A fireEvent(_event<A,B...>* ev, B... args)
-		{			
-			return ev->fireEvent(args...);
-		}*/
 	};
 
 	template<typename A, typename... B>

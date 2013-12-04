@@ -16,6 +16,7 @@ namespace System{
 		String(long txt);
 		String(char txt);
 		String(const char* txt);
+		String(Array<char>* txt);
 		String* operator =(char* text);
 		Array<char>* ToCharArray();
 		operator const char*();

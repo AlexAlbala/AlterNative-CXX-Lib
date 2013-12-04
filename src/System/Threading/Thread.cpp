@@ -25,19 +25,24 @@ namespace System{
 		{
 		}
 
-		ParameterizedThreadStart::ParameterizedThreadStart(boost::function<void (System::Object*)> target)
+		ParameterizedThreadStart::ParameterizedThreadStart(boost::function<void (Object*)> target)
 		{
 			this->functor = target;
 		}
 
-		ParameterizedThreadStart::operator boost::function<void (System::Object*)>()
+		ParameterizedThreadStart::operator boost::function<void (Object*)>()
 		{
 			return this->functor;
 		}
 
 		Thread::Thread(ThreadStart* target)
 		{			
-			functor = *target;
+			functor = *target;			
+		}
+
+		Thread::Thread(ParameterizedThreadStart* target)
+		{			
+			param_functor = *target;
 		}
 
 		void Thread::Sleep(int milliseconds)
@@ -55,6 +60,11 @@ namespace System{
 		void Thread::Start()
 		{	
 			workerThread = boost::thread(this->functor.functor);
+		}
+
+		void Thread::Start(Object* obj)
+		{	
+			workerThread = boost::thread(this->param_functor.functor, obj);
 		}
 
 		void Thread::Join()

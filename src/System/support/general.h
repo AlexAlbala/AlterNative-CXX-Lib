@@ -5,6 +5,8 @@
 /*********************************************************************************************************/
 #define null								(0)
 #define byte								char
+#define uint								unsigned int
+#define ulong								unsigned long long
 
 
 

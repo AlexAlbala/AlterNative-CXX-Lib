@@ -36,10 +36,12 @@ namespace System{
 		private:
 			boost::thread workerThread;
 			ThreadStart functor;
+			ParameterizedThreadStart param_functor;
 		public:
 			Thread(ThreadStart* target);
 			Thread(ParameterizedThreadStart* target);
 			void Start();
+			void Start(Object* obj);
 			void Join();
 			void Abort();
 			static void Sleep(int milliseconds);

@@ -41,6 +41,11 @@ namespace System{
 		strncpy(Data,txt,Length);
 	}
 
+	String::String(Array<char>* txt) {
+		Length = txt->Length;
+		Data = *txt;
+	}
+
 	Array<char>* String::ToCharArray()
 	{
 		return new Array<char>(Data, Length);

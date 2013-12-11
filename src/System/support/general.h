@@ -5,7 +5,9 @@
 /*********************************************************************************************************/
 #define null								(0)
 #define byte								char
-#define uint								unsigned int
+#ifndef __APPLE__
+	#define uint							unsigned int
+#endif
 #define ulong								unsigned long long
 
 

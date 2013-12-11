@@ -115,7 +115,7 @@ namespace System{
 		public:
 			inline  Array() : Array_T_Base<Object*>(){}
 			inline Array(int Length) : Array_T_Base<Object*>(Length){}
-			inline Array(T* elements, int Length) : Array_T_Base<Object*>((Object*)(elements), Length){}
+			inline Array(T* elements, int Length) : Array_T_Base<Object*>((Object**)(elements), Length){}
 			inline T* GetData(){
 				return dynamic_cast<T*>(Array_T_Base<Object*>::GetData());//CAST !
 			}

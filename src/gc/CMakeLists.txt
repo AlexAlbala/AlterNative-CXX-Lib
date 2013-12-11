@@ -34,7 +34,9 @@ ADD_DEFINITIONS("-D_CRT_SECURE_NO_DEPRECATE
 ")
 
 IF(APPLE)
-    SET(CMAKE_OSX_ARCHITECTURES "ppc;i386;x86_64" CACHE STRING "Build architectures for Mac OS X" FORCE)
+   # Removed old architectures for Mavericks compatibility
+   #SET(CMAKE_OSX_ARCHITECTURES "ppc;i386;x86_64" CACHE STRING "Build architectures for Mac OS X" FORCE)
+   SET(CMAKE_OSX_ARCHITECTURES "x86_64" CACHE STRING "Build architectures for Mac OS X" FORCE)
 ENDIF(APPLE)
 
 #LIBATOMIC #TODO

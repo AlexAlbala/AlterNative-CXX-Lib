@@ -4,6 +4,7 @@
 #include "FileMode.h"
 #include "FileAccess.h"
 #include "Stream.h"
+#include "../Object.h"
 #include "../String.h"
 #include "StreamReaderCXX.h"
 #include "StreamWriterCXX.h"

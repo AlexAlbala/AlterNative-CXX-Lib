@@ -1,5 +1,6 @@
 #pragma once
 #include "../IDisposable.h"
+#include "../Object.h"
 #include "../String.h"
 #include "../support.h"
 #include "../Array.h"

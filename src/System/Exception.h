@@ -1,4 +1,5 @@
 #pragma once
+#include "Object.h"
 #include "String.h"
 #include <exception>
 

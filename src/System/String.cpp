@@ -1,3 +1,4 @@
+#include "Object.h"
 #include "String.h"
 #include <stdlib.h>
 #include <stdio.h>

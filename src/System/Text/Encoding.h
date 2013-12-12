@@ -1,4 +1,3 @@
-#include "../String.h"
 #include "../System.h"
 
 namespace System{

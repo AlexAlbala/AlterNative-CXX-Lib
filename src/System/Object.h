@@ -1,6 +1,4 @@
 #pragma once
-//TODO: If String.h is added, the compiler crashes !
-//#include "String.h"
 
 namespace System{
 	
@@ -11,7 +9,6 @@ namespace System{
 	//Forward declarations
 	class String;
 	
-
 	class Object
 	{		
 	public:
@@ -22,6 +19,8 @@ namespace System{
 		//boost::mutex mutex;
 	};
 }
+
+#include "String.h"
 
 namespace System{
 

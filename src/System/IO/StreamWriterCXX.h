@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <fstream>
+#include "../Object.h"
 #include "../String.h"
 #include "TextWriter.h"
 #include "../Array.h"

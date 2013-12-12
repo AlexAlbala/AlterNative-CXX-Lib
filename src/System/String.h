@@ -6,7 +6,6 @@
 #include "Array.h"
 
 namespace System{
-	//Forward declaration
 	class String : public Object, public virtual gc_cleanup {
 	public:
 		int Length;

@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include "TextReader.h"
+#include "../Object.h"
 #include "../String.h"
 #include "../GC.h"
 #include "../Array.h"

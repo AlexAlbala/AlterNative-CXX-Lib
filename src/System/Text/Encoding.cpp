@@ -1,5 +1,4 @@
 #include "Encoding.h"
-#include "../String.h"
 #include "../System.h"
 #include <boost/locale.hpp>
 

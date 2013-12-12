@@ -20,7 +20,7 @@ namespace System{
 
 	String::String(long val) {	
 		char* tmp = new char[66];
-		sprintf(tmp, "%d", val);
+		sprintf(tmp, "%ld", val);
 		Length = strlen(tmp);
 		Data = new char[Length];
 		memcpy(Data, tmp, Length);

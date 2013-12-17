@@ -8,7 +8,7 @@ using namespace System;
 namespace System{
 	namespace Collections{
 
-		class IEnumerable{
+		class IEnumerable : public Object{
 		public:
 			virtual IEnumerator* GetEnumerator()=0;
 		

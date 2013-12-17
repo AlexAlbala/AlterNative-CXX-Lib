@@ -2,7 +2,7 @@
 
 namespace System{
 	namespace Text{
-		class Encoding : public Object, public gc_cleanup {
+		class Encoding : public Object{
 			public : 
 				class UTF8
 				{
@@ -14,7 +14,7 @@ namespace System{
 
 		};
 
-		class UTF8Encoding : public Object, public gc_cleanup {
+		class UTF8Encoding : public Object{
 		public:
 			String* GetString(Array<byte>* input);
 			Array<byte>* GetBytes(String* input);

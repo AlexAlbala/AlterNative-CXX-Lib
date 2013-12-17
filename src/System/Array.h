@@ -8,7 +8,7 @@ using namespace System::Collections::Generic;
 namespace System{
 	namespace _Internal {
 		template<typename T>
-		class Array_T_Base : public Object, public gc_cleanup{
+		class Array_T_Base : public Object{
 		private:
 			TypeDecl(T)* data;		
 		public:

@@ -2,7 +2,7 @@
 #include "System.h"
 
 namespace System {
-	enum DateTimeKind {
+	enum class DateTimeKind {
 		Unspecified,
 		Utc,
 		Local

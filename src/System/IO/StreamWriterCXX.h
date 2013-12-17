@@ -9,7 +9,7 @@ using namespace std;
 
 namespace System{
 	namespace IO{
-		class StreamWriter : public TextWriter, public virtual gc_cleanup
+		class StreamWriter : public TextWriter
 		{
 		private:
 			ofstream* file;

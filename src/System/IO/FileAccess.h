@@ -1,7 +1,7 @@
 #pragma once
 namespace System{
 	namespace IO{
-		enum FileAccess
+		enum class FileAccess
 		{
 			/// <summary>Read access to the file. Data can be read from the file. Combine with Write for read/write access.</summary>
 			Read = 1,

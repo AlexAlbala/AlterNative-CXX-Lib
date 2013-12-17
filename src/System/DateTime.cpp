@@ -30,6 +30,12 @@ namespace System{
 		this->DateData=diff.ticks();		
 	}
 
+	DateTime* DateTime::AddMilliseconds(int milliseconds)
+	{		
+		DateData += (int)(milliseconds/this->TicksPerMillisecond);
+		return this;
+	}
+
 	void DateTime::_init()
 	{
 		this->time_t_epoch = ptime(date(1970,1,1));

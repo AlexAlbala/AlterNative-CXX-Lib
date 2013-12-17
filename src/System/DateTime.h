@@ -17,13 +17,14 @@ namespace System{
 		DateTime();
 		DateTime(long long ticks);
 		DateTime(int year, int month, int day);
+		DateTime* AddMilliseconds(int milliseconds);
 		static DateTime* GetNow();
 		static DateTime* GetUtcNow();
 		void _init();
 		String* ToString();
 
-	private:
-		long long DateData;
+	private:		
+		long long DateData;//Ticks
 		long long TicksPerMillisecond;
 		time_duration time_duration_from_ticks(time_duration::tick_type ticks);
 		static ptime time_t_epoch;

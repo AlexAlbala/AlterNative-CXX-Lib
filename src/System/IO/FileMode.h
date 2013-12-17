@@ -2,7 +2,7 @@
 
 namespace System{
 	namespace IO{
-		enum FileMode
+		enum class FileMode
 		{
 			/// <summary>Specifies that the operating system should create a new file. This requires <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />. If the file already exists, an <see cref="T:System.IO.IOException" /> is thrown.</summary>
 			CreateNew = 1,

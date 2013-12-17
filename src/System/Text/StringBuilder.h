@@ -6,7 +6,7 @@
 namespace System{
 	namespace Text{
 
-		class StringBuilder : public virtual gc_cleanup /*,ISerializable*/{
+		class StringBuilder : public virtual Object /*,ISerializable*/{
 
 		private:
 			String* data;

@@ -12,7 +12,7 @@ using namespace std;
 
 namespace System{
 	namespace IO{
-		class StreamReader : public TextReader, public virtual gc_cleanup
+		class StreamReader : public TextReader
 		{
 		private:
 			ifstream* file;

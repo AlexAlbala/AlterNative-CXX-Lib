@@ -8,7 +8,7 @@ namespace __Internal__{
 }
 
 namespace System{
-    class Delegate
+    class Delegate : public Object
     {
 	friend class _event;
     public:		    

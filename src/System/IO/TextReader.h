@@ -7,7 +7,7 @@
 
 namespace System {
 	namespace IO{
-		class TextReader : public IDisposable, public virtual gc_cleanup {
+		class TextReader : public IDisposable{
 		public:	
 			void Dispose();
 			virtual void Dispose(bool disposing);

@@ -56,6 +56,11 @@ namespace System{
 					Count++;
 				}
 
+				void SetData(TypeDecl(KeyT) key, TypeDecl(ValueT) value)
+				{
+					(*this)[key] = value;
+				}
+
 				bool ContainsKey(TypeDecl(KeyT) key)
 				{
 					for(int i = 0; i < Count; i++)

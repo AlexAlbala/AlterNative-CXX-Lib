@@ -100,7 +100,19 @@ namespace System{
 		delete elements;
 		return Concat(stringArray);
 	}	
-		
+	
+	String* String::ToLower()
+	{
+		String* resString = new String(strlwr(Data));
+		return resString;
+	}
+
+	String* String::ToUpper()
+	{
+		String* resString = new String(strupr(Data));
+		return resString;
+	}
+
 	String* String::ToString()
 	{
 		return this;

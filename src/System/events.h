@@ -5,7 +5,7 @@ namespace __Internal__{
 	template<typename A, typename... B>
 	class _event;
 
-	class Event
+	class Event : public Object
 	{
 	public:
 		template<typename A, typename... B>

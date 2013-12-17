@@ -1,4 +1,5 @@
 #pragma once
+#include "../gc/include/gc_cpp.h"
 
 namespace System{
 	
@@ -9,7 +10,7 @@ namespace System{
 	//Forward declarations
 	class String;
 	
-	class Object
+	class Object : public gc_cleanup
 	{		
 	public:
 		Object(void);

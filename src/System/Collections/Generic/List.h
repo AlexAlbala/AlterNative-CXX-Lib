@@ -7,7 +7,7 @@ namespace System{
 		namespace Generic{
 
 			template<typename T>
-			class ListEnumerator_T : public IEnumerator_T<TypeArg(T)>, public gc_cleanup
+			class ListEnumerator_T : public IEnumerator_T<TypeArg(T)>
 			{
 			private:
 				T* initialPos;

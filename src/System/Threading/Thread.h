@@ -32,7 +32,8 @@ namespace System{
 		};
 
 
-		class Thread : public virtual Object, public virtual gc_cleanup{
+		class Thread : public virtual Object
+		{
 		private:
 			boost::thread workerThread;
 			ThreadStart functor;

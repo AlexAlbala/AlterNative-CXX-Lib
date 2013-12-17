@@ -2,7 +2,7 @@
 
 namespace System{
 	namespace IO{
-		enum FileOptions
+		enum class FileOptions
 		{
 			/// <summary>Indicates no additional parameters.</summary>
 			None = 0,

@@ -1,6 +1,5 @@
 #pragma once
 #include <stdio.h>
-#include "../GC.h"
 #include "../String.h"
 #include "FileStream.h"
 #include <fstream>
@@ -10,7 +9,7 @@
 
 namespace System{
 	namespace IO{
-		class File : public virtual gc_cleanup{
+		class File : public virtual Object{
 		private:
 			static String* InternalReadAllText(String* path, bool checkHost);
 			static void InternalWriteAllText(String* path, String* contents, bool checkHost);

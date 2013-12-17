@@ -6,7 +6,7 @@
 #include "Array.h"
 
 namespace System{
-	class String : public Object, public virtual gc_cleanup {
+	class String : public Object {
 	public:
 		int Length;
 		char* Data;
@@ -21,7 +21,10 @@ namespace System{
 		operator const char*();
 		virtual ~String(void);
 		String* ToString(void);
+		String* ToLower();
+		String* ToUpper();
 		static String* Concat(Array<String>* elements);
 		static String* Concat(Array<Object>* elements);
+
 	};
 }

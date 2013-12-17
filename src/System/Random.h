@@ -6,11 +6,10 @@
 
 namespace System {
 
-	class Random : public Object {	
+	class Random : public Object {
 	public:
 		Random();
 	public:
-		float NextDouble();
-	
+		float NextDouble();	
 	};
 }

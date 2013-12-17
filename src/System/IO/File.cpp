@@ -16,14 +16,14 @@ namespace System{
 
 		FileStream* File::Create(String* path)
 		{
-			return new FileStream(path, System::IO::CreateNew,System::IO::ReadWrite);//TODO mmm ENUMS AND NAMESPACES?
+			return new FileStream(path, FileMode::CreateNew, FileAccess::ReadWrite);
 		}
 
 		FileStream* File::OpenRead(String* path)
 		{
 			if(File::Exists(path))
 			{
-				return new FileStream(path,System::IO::Open, System::IO::Read);//TODO mmm ENUMS AND NAMESPACES?
+				return new FileStream(path, FileMode::Open, FileAccess::Read);
 			}
 			else
 				throw std::exception();//TODO: FILENOTFOUNDEXCEPTION

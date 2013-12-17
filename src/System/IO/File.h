@@ -1,5 +1,6 @@
 #pragma once
 #include <stdio.h>
+#include "../Object.h"
 #include "../String.h"
 #include "FileStream.h"
 #include <fstream>

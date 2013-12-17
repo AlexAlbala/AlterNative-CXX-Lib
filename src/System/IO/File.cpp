@@ -1,12 +1,13 @@
 #include "File.h"
 #include "FileMode.h"
 #include "FileAccess.h"
+#include <boost/filesystem.hpp>
 
 namespace System{
 	namespace IO{
 		bool File::Exists(String* path)
 		{
-			return std::ifstream(*path);
+			return boost::filesystem::exists(path->Data); 
 		}
 
 		void File::Delete(String* path)

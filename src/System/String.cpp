@@ -2,6 +2,7 @@
 #include "String.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 namespace System{
 
@@ -100,16 +101,30 @@ namespace System{
 		delete elements;
 		return Concat(stringArray);
 	}	
+
+        char* stoupper( char* s )
+        {
+        	char* p = s;
+  		while (*p = toupper( *p )) p++;
+  		return s;
+  	}	
+
+	char* stolower( char* s )
+        {
+        	char* p = s;
+  		while (*p = tolower( *p )) p++;
+  		return s;
+  	}	
 	
 	String* String::ToLower()
 	{
-		String* resString = new String(strlwr(Data));
+		String* resString = new String(stolower(Data));
 		return resString;
 	}
 
 	String* String::ToUpper()
 	{
-		String* resString = new String(strupr(Data));
+		String* resString = new String(stoupper(Data));
 		return resString;
 	}
 

@@ -11,7 +11,7 @@ namespace __Internal__{
 	*/
 	template<typename T>
 	struct IsFundamentalType {
-		enum { result = false };
+		enum { result = std::is_enum<T>::value };
 	};
 
 	template<>

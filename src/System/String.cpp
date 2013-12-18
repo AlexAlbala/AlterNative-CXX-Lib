@@ -63,6 +63,11 @@ namespace System{
 		return Data;
 	}
 
+	String::operator char*()
+	{
+		return Data;
+	}
+
 	String::~String() {
 		if(Data!=null) {
 			delete Data;

@@ -120,7 +120,7 @@ namespace System{
 
 		void TextWriter::Write(String* value)
 		{		
-			Array<char>* a = new Array<char>(value->Data,value->Length);
+			Array<char>* a = new Array<char>(*value,value->Length);
 			this->Write(a);
 		}
 
@@ -219,7 +219,7 @@ namespace System{
 
 		void TextWriter::WriteLine(String* value)
 		{
-			Array<char>* a = new Array<char>(value->Data,value->Length);
+			Array<char>* a = new Array<char>(*value,value->Length);
 			this->WriteLine(a);
 		}
 	}

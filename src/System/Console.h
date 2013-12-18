@@ -19,6 +19,6 @@ namespace System {
 		static void WriteLine(Array<char>* c);
 		static void WriteLine(String* s);
 
-		static char* ReadLine();
+		static String* ReadLine();
 	};
 }

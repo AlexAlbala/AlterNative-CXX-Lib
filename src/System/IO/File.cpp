@@ -7,7 +7,8 @@ namespace System{
 	namespace IO{
 		bool File::Exists(String* path)
 		{
-			return boost::filesystem::exists(path->Data); 
+			const char* _path = *path;
+			return boost::filesystem::exists(_path); 
 		}
 
 		void File::Delete(String* path)

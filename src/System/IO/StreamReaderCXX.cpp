@@ -5,7 +5,7 @@ namespace System{
 		StreamReader::StreamReader(String* path)
 		{
 			file = new ifstream();
-			file->open(path->Data);
+			file->open(*path);
 		}
 
 		StreamReader::StreamReader(const char* path)

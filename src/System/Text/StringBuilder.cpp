@@ -10,10 +10,9 @@ namespace System{
 
 		StringBuilder::StringBuilder(int capacity)
 		{
-			data = new String();
-			data->Data = new char[capacity];
+			char* tmp = new char[capacity];
+			data = new String(tmp);
 			data->Length = capacity;
-			Length = capacity;
 		}
 
 		String* StringBuilder::ToString()

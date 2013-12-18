@@ -5,7 +5,7 @@ namespace System{
 		StreamWriter::StreamWriter(String* path)
 		{
 			file = new ofstream();
-			file->open(path->Data);
+			file->open(*path);
 		}
 
 		StreamWriter::StreamWriter(const char* path)
@@ -22,7 +22,7 @@ namespace System{
 
 		void StreamWriter::Write(String* value)
 		{
-			*file << value->Data;
+			*file << (const char*)(*value);
 		}
 
 		void StreamWriter::Write(char value)
@@ -90,7 +90,7 @@ namespace System{
 
 		void StreamWriter::WriteLine(String* text)
 		{
-			*file << text->Data << std::endl;
+			*file << (const char*)(*text) << std::endl;
 		}
 		//
 		void StreamWriter::WriteLine(const char* text)

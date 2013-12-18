@@ -10,7 +10,7 @@ namespace System{
 		Array<byte>* Encoding::UTF8::GetBytes(String* value){
 			loc::generator gen;
 			std::locale toLocale = gen("en_US.utf-8");			
-			std::string converted = loc::conv::to_utf<char>(value->Data, toLocale);
+			std::string converted = loc::conv::to_utf<char>(*value, toLocale);
 			Array<char>* v = new Array<char>((char*)converted.data(),converted.size());
 			return v;
 		}

@@ -14,7 +14,7 @@ namespace System {
 	}
 
 	void Console::Write(String* s) {
-		std::cout << s->Data;
+		std::cout << *s;
 	}
 
 	void Console::WriteLine(char* txt) {
@@ -42,15 +42,15 @@ namespace System {
 	}
 
 	void Console::WriteLine(String* s) {
-		std::cout << s->Data << std::endl;
+		std::cout << *s << std::endl;
 	}
 
-	char* Console::ReadLine() {
-		String* s = new String();
-		s->Length=256;
-		s->Data = new char[s->Length];
-		std::cin.getline (s->Data,256);
-		return s->Data;
+	String* Console::ReadLine() {
+		char* tmp = new char[256];
+		std::cin.getline (tmp,256);
+
+		String* s = new String(tmp);
+		return s;
 	}
 
 }

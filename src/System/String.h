@@ -7,9 +7,11 @@
 
 namespace System{
 	class String : public Object {
+
+	private:
+		char* Data;
 	public:
 		int Length;
-		char* Data;
 		String(void);
 		String(int txt);
 		String(long txt);
@@ -19,6 +21,7 @@ namespace System{
 		String* operator =(char* text);
 		Array<char>* ToCharArray();
 		operator const char*();
+		operator char*();
 		virtual ~String(void);
 		String* ToString(void);
 		String* ToLower();

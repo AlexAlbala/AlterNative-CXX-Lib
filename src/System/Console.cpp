@@ -14,7 +14,8 @@ namespace System {
 	}
 
 	void Console::Write(String* s) {
-		std::cout << *s;
+		char* tmp = *s;
+		std::cout << tmp;
 	}
 
 	void Console::WriteLine(char* txt) {
@@ -42,7 +43,8 @@ namespace System {
 	}
 
 	void Console::WriteLine(String* s) {
-		std::cout << *s << std::endl;
+		char* tmp = *s;
+		std::cout << tmp << std::endl;
 	}
 
 	String* Console::ReadLine() {

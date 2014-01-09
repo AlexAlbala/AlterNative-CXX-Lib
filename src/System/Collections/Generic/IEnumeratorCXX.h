@@ -15,9 +15,7 @@ namespace System{
 				operator IEnumerator_T<Object>*()
 				{
 					return dynamic_cast<IEnumerator_T<Object>*>(this);
-				}
-
-				//virtual typename Boxing<T,IsFundamentalType<T>::result>::Type getCurrent() = 0;
+				}				
 			};
 		}
 	}

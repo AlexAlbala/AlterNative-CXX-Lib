@@ -46,16 +46,22 @@ namespace System{
                 one->Remove(other);
                 return one;
 			}
+
+			template<typename A, typename... B>
+			bool Equals(__Internal__::_Delegate<A,B...>* one)
+			{
+				__Internal__::_Delegate<A,B...>* me = (__Internal__::_Delegate<A,B...>*)this;
+				return &(one->_target) == &(me->_target);
+			}
     };
 }
 
-using namespace boost::signals2;
     namespace __Internal__{
             template<typename RType, typename... Arguments>
             class _Delegate : public System::Delegate
             {			
             public:
-                signal<TypeDecl(RType) (Arguments ...)> _target;
+                boost::signals2::signal<TypeDecl(RType) (Arguments ...)> _target;
             public:
                 _Delegate()
                 {                    
@@ -87,7 +93,7 @@ using namespace boost::signals2;
             class _Delegate<void, Arguments...> : public System::Delegate
             {				
             public:
-                signal<void (Arguments ...)> _target;
+                boost::signals2::signal<void (Arguments ...)> _target;
             public:
                 _Delegate()
                 {                        

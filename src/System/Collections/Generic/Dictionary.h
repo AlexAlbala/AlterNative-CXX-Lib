@@ -6,10 +6,10 @@ namespace System{
 	namespace Collections{
 		namespace Generic{
 			template<typename KeyT, typename ValueT>
-			class Dictionary_T : public virtual Object /*, public IList*/ //TODO Implement IList(<T>) and inherit from it
+			class Dictionary_T : public virtual Object
 			{
 			
-			private:	
+			private:
 				TypeDecl(KeyT)* keys;
 				TypeDecl(ValueT)* values;
 			
@@ -17,7 +17,7 @@ namespace System{
 				int Count;
 				Dictionary_T()
 				{
-					Count = 0;		
+					Count = 0;
 				}
 			
 				Dictionary_T(Dictionary_T<KeyT, ValueT>* dictionary)
@@ -57,8 +57,11 @@ namespace System{
 				}
 
 				void SetData(TypeDecl(KeyT) key, TypeDecl(ValueT) value)
-				{
-					(*this)[key] = value;
+				{					
+					if(ContainsKey(key))
+					{
+						(*this)[key] = value;
+					}
 				}
 
 				bool ContainsKey(TypeDecl(KeyT) key)
@@ -96,7 +99,7 @@ namespace System{
 					}
 				}
 
-				TypeDecl(ValueT) operator[](TypeDecl(KeyT) key)
+				TypeDecl(ValueT)& operator[](TypeDecl(KeyT) key)
 				{
 					for(int i = 0; i < Count; i++)
 					{
@@ -113,4 +116,3 @@ namespace System{
 		}
 	}
 }
-

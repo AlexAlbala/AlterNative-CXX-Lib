@@ -1,5 +1,4 @@
 #pragma once
-#include <type_traits>
 
 /*********************************************************************************************************/
 /*********************************** ISFUNDAMENTALTYPE TEMPLATES  ****************************************/
@@ -11,7 +10,7 @@ namespace __Internal__{
 	*/
 	template<typename T>
 	struct IsFundamentalType {
-		enum { result = std::is_enum<T>::value };
+		enum { result = IsEnum(T) };
 	};
 
 	template<>

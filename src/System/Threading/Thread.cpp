@@ -1,5 +1,4 @@
 #include "Thread.h"
-#include "../Exception/SystemException/NotImplementedException.h"
 
 
 //http://antonym.org/2009/05/threading-with-boost---part-i-creating-threads.html

@@ -7,7 +7,7 @@ namespace loc = boost::locale;
 namespace System{
 	namespace Text{
 
-		Array<byte>* Encoding::UTF8::GetBytes(String* value){
+		Array<char>* Encoding::UTF8::GetBytes(String* value){
 			loc::generator gen;
 			std::locale toLocale = gen("en_US.utf-8");			
 			std::string converted = loc::conv::to_utf<char>(*value, toLocale);
@@ -15,7 +15,7 @@ namespace System{
 			return v;
 		}
 
-		String* Encoding::UTF8::GetString(byte* bytes){
+		String* Encoding::UTF8::GetString(char* bytes){
 			loc::generator gen;
 			std::locale toLocale = gen("en_US.utf-8");
 
@@ -24,17 +24,17 @@ namespace System{
 
 		}
 
-		String* Encoding::UTF8::GetString(Array<byte>* bytes)
+		String* Encoding::UTF8::GetString(Array<char>* bytes)
 		{        
 			return GetString(bytes->GetData());
 		}
 
-		String* UTF8Encoding::GetString(Array<byte>* input)
+		String* UTF8Encoding::GetString(Array<char>* input)
 		{
 			return Encoding::UTF8::GetString(input->GetData());
 		}
 
-		Array<byte>* UTF8Encoding::GetBytes(String* input)
+		Array<char>* UTF8Encoding::GetBytes(String* input)
 		{
 			return Encoding::UTF8::GetBytes(input);
 		}

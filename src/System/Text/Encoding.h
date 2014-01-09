@@ -7,17 +7,17 @@ namespace System{
 				class UTF8
 				{
 				public:
-					static Array<byte>* GetBytes(String* value);
-					static String* GetString(byte* bytes);
-					static String* GetString(Array<byte>* bytes);
+					static Array<char>* GetBytes(String* value);
+					static String* GetString(char* bytes);
+					static String* GetString(Array<char>* bytes);
 				};
 
 		};
 
 		class UTF8Encoding : public Object{
 		public:
-			String* GetString(Array<byte>* input);
-			Array<byte>* GetBytes(String* input);
+			String* GetString(Array<char>* input);
+			Array<char>* GetBytes(String* input);
 		};
 	}
 }

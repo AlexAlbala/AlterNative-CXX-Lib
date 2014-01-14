@@ -24,7 +24,7 @@ namespace System{
 #include "String.h"
 
 namespace System{
-	namespace _Internal_{
+	namespace __Internal__{
 		template<typename T>
 		class __box_t_base : public Object
 		{		
@@ -93,7 +93,7 @@ namespace System{
 	}
 	
 	template <typename T>
-	class Box_T : public _Internal_::__box_t<T, IsEnum(T)> {
+	class Box_T : public __Internal__::__box_t<T, IsEnum(T)> {
 	public:
 		Box_T(T t) : _Internal_::__box_t<T, IsEnum(T)>(t){};
 		Box_T(T* t) : _Internal_::__box_t<T, IsEnum(T)>(t){};

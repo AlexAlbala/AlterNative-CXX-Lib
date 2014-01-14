@@ -2,12 +2,14 @@
 #include <boost/signals2/signal.hpp>
 #include "System.h"
 
-namespace __Internal__{
-	template<typename A, typename... B>
-	class _Delegate;
-}
-
 namespace System{
+
+	//forward declaration
+	namespace __Internal__{
+		template<typename A, typename... B>
+		class _Delegate;
+	}
+
     class Delegate : public Object
     {
 	friend class _event;
@@ -54,7 +56,7 @@ namespace System{
 				return &(one->_target) == &(me->_target);
 			}
     };
-}
+
 
     namespace __Internal__{
             template<typename RType, typename... Arguments>
@@ -120,3 +122,4 @@ namespace System{
                 }
             };			
     }
+}

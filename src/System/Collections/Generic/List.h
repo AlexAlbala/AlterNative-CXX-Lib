@@ -46,7 +46,7 @@ namespace System{
 			};
 			
 			template<typename T>
-			class List_T : public IEnumerable_T<T>, public gc_cleanup /*, public IList*/ //TODO Implement IList(<T>) and inherit from it
+			class List_T : public IEnumerable_T<T>/*, public IList*/ //TODO Implement IList(<T>) and inherit from it
 			{
 			
 			private:	

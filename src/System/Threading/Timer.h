@@ -22,7 +22,7 @@ using namespace System;
 namespace System {
 	namespace Threading {
 
-		class TimerCallback
+		class TimerCallback : public Delegate
 		{
 			/** for using Timercallback as a waitHandle:
 
@@ -47,7 +47,7 @@ namespace System {
 		//Attribute: __DynamicallyInvokable*
 		//Attribute: ComVisible*(true)
 		//Attribute: HostProtection*(SecurityAction::LinkDemand, Synchronization = true, ExternalThreading = true)
-		class Timer : /*public virtual MarshalByRefObject,*/ public virtual IDisposable, public virtual Object{
+		class Timer : /*public virtual MarshalByRefObject,*/ public virtual IDisposable{
 			private:
 				boost::asio::io_service* m_serv;
 				boost::asio::deadline_timer* m_timer;

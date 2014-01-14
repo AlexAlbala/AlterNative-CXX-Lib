@@ -1,7 +1,11 @@
 #pragma once
+#include "System.h"
 
-class IDisposable
+namespace System
 {
-public:
-	virtual void Dispose() = 0;
-};
+	class IDisposable : public virtual Object
+	{
+	public:
+		virtual void Dispose() = 0;
+	};
+}

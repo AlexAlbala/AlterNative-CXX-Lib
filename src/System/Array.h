@@ -6,7 +6,7 @@
 using namespace std;
 using namespace System::Collections::Generic;
 namespace System{
-	namespace _Internal {
+	namespace __Internal__ {
 		template<typename T>
 		class Array_T_Base : public Object{
 		private:
@@ -131,10 +131,10 @@ namespace System{
 	}
 
 	template<typename T>
-	class Array : public _Internal::Array<T, IsBasic(T)>{
+	class Array : public __Internal__::Array<T, IsBasic(T)>{
 	public:
-		Array() : _Internal::Array<T, IsBasic(T)>(){}
-		Array(int Length) : _Internal::Array<T, IsBasic(T)>(Length){}
-		Array(T* elements, int Length) : _Internal::Array<T, IsBasic(T)>(elements, Length){}	
+		Array() : __Internal__::Array<T, IsBasic(T)>(){}
+		Array(int Length) : __Internal__::Array<T, IsBasic(T)>(Length){}
+		Array(T* elements, int Length) : __Internal__::Array<T, IsBasic(T)>(elements, Length){}	
 	};
 }

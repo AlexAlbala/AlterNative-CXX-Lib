@@ -44,34 +44,34 @@ namespace System{
 			param_functor = *target;
 		}
 
-		void Thread::Sleep(int milliseconds)
+		inline void Thread::Sleep(int milliseconds)
 		{
 			boost::posix_time::milliseconds sleepTime(milliseconds);
 			boost::this_thread::sleep(sleepTime);
 		}
 
-		void Thread::Sleep(TimeSpan* span)
+		inline void Thread::Sleep(TimeSpan* span)
 		{
 			boost::posix_time::milliseconds sleepTime(span->TotalMilliseconds);
 			boost::this_thread::sleep(sleepTime);
 		}
 
-		void Thread::Start()
+		inline void Thread::Start()
 		{	
 			workerThread = boost::thread(this->functor.functor);
 		}
 
-		void Thread::Start(Object* obj)
+		inline void Thread::Start(Object* obj)
 		{	
 			workerThread = boost::thread(this->param_functor.functor, obj);
 		}
 
-		void Thread::Join()
+		inline void Thread::Join()
 		{
 			workerThread.join();
 		}
 
-		void Thread::Abort()
+		inline void Thread::Abort()
 		{
 			workerThread.interrupt();
 		}

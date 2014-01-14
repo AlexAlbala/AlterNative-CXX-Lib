@@ -6,8 +6,8 @@ namespace System{
 		//DO NOTHING
 
 		GC_collect_a_little();
-		GC_gcollect();
-		GC_gcollect_and_unmap();
+		//GC_gcollect();
+		//GC_gcollect_and_unmap();
 	}
 
 	void GC::SuppressFinalize(Object* obj){	

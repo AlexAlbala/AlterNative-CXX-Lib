@@ -74,25 +74,16 @@ namespace System{
 			Data = null;
 		}
 	}	
-	String* String::Concat(Array<String>* elements) {
-		String* newstring = new String();
-
-		int totalLength = 0;
-		for(int i = 0; i < elements->Length; i++)
-		{
-			totalLength += (*elements)[i]->Length;
-		}
-		newstring->Data = new char[totalLength];
-
+	String* String::Concat(Array<String>* elements) {	
+		stringstream ss;
 		for(int i = 0; i < elements->Length; i++)
 		{
 			String* s = (*elements)[i];
-			//strncpy(newstring->Data + newstring->Length, s->Data, s->Length);
-			memcpy(newstring->Data + newstring->Length, s->Data, s->Length);
-			newstring->Length += s->Length;
-			delete s;
-		}                
-		delete elements;
+			ss << s->Data;			
+		}
+
+		String* newstring = new String(ss.str().data());
+		//delete elements;
 		return newstring;
 	}
 
@@ -101,9 +92,19 @@ namespace System{
 
 		for(int i = 0; i < elements->Length; i++)
 		{
-			stringArray->SetData(i , (String*)(*elements)[i]);
-		}
-		delete elements;
+			Object* tmp = (*elements)[i];
+			String* tmp_s;
+
+			if(is_inst_of<String*>(tmp))
+			{
+				tmp_s = as_cast<String*>(tmp);
+			}
+			else
+			{
+				tmp_s = tmp->ToString();	
+			}
+			stringArray->SetData(i , tmp_s);
+		}		
 		return Concat(stringArray);
 	}	
 

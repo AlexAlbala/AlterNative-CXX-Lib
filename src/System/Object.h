@@ -74,7 +74,7 @@ namespace System{
 
 			String* ToString()
 			{
-				return new String("Enum");	
+				return new String("Enum");
 			}
 		};
 

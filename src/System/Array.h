@@ -10,7 +10,7 @@ namespace System{
 		template<typename T>
 		class Array_T_Base : public Object{
 		private:
-			TypeDecl(T)* data;		
+			TypeDecl(T)* data;
 		public:
 			int Length;
 			Array_T_Base()

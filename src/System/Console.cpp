@@ -13,6 +13,10 @@ namespace System {
 		std::cout << i;
 	}
 
+	void Console::Write(bool i) {
+		std::cout << (i ? "True" : "False");
+	}
+
 	void Console::Write(String* s) {
 		char* tmp = *s;
 		std::cout << tmp;
@@ -29,6 +33,10 @@ namespace System {
 
 	void Console::WriteLine(int i) {
 		std::cout << i << std::endl;
+	}
+
+	void Console::WriteLine(bool i) {
+		std::cout << (i ? "True" : "False") << std::endl;
 	}
 
 	void Console::WriteLine(float f) {

@@ -9,10 +9,12 @@ namespace System {
 
 		static void Write(char* txt);
 		static void Write(int i);
+		static void Write(bool i);
 		static void Write(String* s);
 
 		static void WriteLine(char* txt);
 		static void WriteLine(int i);
+		static void WriteLine(bool i);
 		static void WriteLine(float i);
 		static void WriteLine(double i);
 		static void WriteLine(Object* i);

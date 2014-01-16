@@ -10,8 +10,8 @@ namespace System{
 
 	private:
 		char* Data;
-	public:
 		int Length;
+	public:		
 		String(void);
 		String(int txt);
 		String(long txt);
@@ -28,6 +28,8 @@ namespace System{
 		String* ToUpper();
 		static String* Concat(Array<String>* elements);
 		static String* Concat(Array<Object>* elements);
+
+		int getLength();
 
 	};
 }

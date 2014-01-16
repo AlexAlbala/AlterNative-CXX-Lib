@@ -17,22 +17,22 @@ namespace System{
 			template<typename KeyT, typename ValueT>
 			class Dictionary_T : private map<TypeDecl(KeyT),TypeDecl(ValueT)>, public Object
 			{
-				public:
-				int Count;
+				public:			
 
 				Dictionary_T() : MAP_KV()
-				{
-					Count = 0;
+				{					
 				}
 			
 				Dictionary_T(Dictionary_T<KeyT, ValueT>* dictionary) : MAP_KV()
 				{
-					for(int i=0; i<dictionary->Count;i++)
+					/*for(int i=0; i<dictionary->getCount();i++)
 					{
 						TypeDecl(KeyT) key = dictionary->keys[i];
 						TypeDecl(ValueT) val = dictionary->values[i];
 						this->Add(key,val);
-					}					
+					}*/
+
+					MAP_KV::insert(dictionary->begin(), dictionary->end());
 				}
 			
 				~Dictionary_T()
@@ -46,9 +46,13 @@ namespace System{
 					MAP_KV::emplace(key, value);
 #else
 					pair<TypeDecl(KeyT), TypeDecl(ValueT)> mpair(key, value);
-					map<TypeDecl(KeyT),TypeDecl(ValueT)>::insert(mpair);
-#endif
-					Count++;
+					MAP_KV::insert(mpair);
+#endif					
+				}
+
+				inline int getCount()
+				{
+					return MAP_KV::size();
 				}
 
 				inline void SetData(TypeDecl(KeyT) key, TypeDecl(ValueT) value)
@@ -63,8 +67,7 @@ namespace System{
 
 				inline void Remove(TypeDecl(KeyT) key)
 				{
-					MAP_KV::erase(key);
-					Count--;
+					MAP_KV::erase(key);				
 				}
 
 				inline TypeDecl(ValueT)& operator[](TypeDecl(KeyT) key)
@@ -74,8 +77,7 @@ namespace System{
 
 				inline void Clear()
 				{
-					MAP_KV::clear();
-					Count = 0;
+					MAP_KV::clear();					
 				}
 
 				bool TryGetValue(TypeDecl(KeyT) key, ValueT& value)

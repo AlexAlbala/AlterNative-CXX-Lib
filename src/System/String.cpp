@@ -134,6 +134,10 @@ namespace System{
 		return resString;
 	}
 
+	int String::getLength()
+	{
+		return this->Length;
+	}
 	String* String::ToString()
 	{
 		return this;

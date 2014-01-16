@@ -37,7 +37,7 @@ namespace System{
 			{
 				throw new ArgumentNullException(new String("path"));
 			}
-			if (path->Length == 0)
+			if (path->getLength() == 0)
 			{
 				// While we don't have the Environment class
 				//throw new ArgumentException(Environment.GetResourceString("Argument_EmptyPath"));
@@ -53,7 +53,7 @@ namespace System{
 			{
 				throw new ArgumentNullException(new String("path"));
 			}
-			if (path->Length == 0)
+			if (path->getLength() == 0)
 			{
 				// While we don't have the Environment class
 				//throw new ArgumentException(Environment.GetResourceString("Argument_EmptyPath"));

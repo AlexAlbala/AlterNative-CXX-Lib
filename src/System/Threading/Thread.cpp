@@ -46,6 +46,9 @@ namespace System{
 
 		inline void Thread::Sleep(int milliseconds)
 		{
+			//TO BE IMPROVED...
+			if(milliseconds < 0) while(1){}			
+
 			boost::posix_time::milliseconds sleepTime(milliseconds);
 			boost::this_thread::sleep(sleepTime);
 		}

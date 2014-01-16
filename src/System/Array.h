@@ -113,7 +113,7 @@ namespace System{
 		template<typename T>
 		class Array<T, false> : public Array_T_Base<Object*>{
 		public:
-			inline  Array() : Array_T_Base<Object*>(){}
+			inline Array() : Array_T_Base<Object*>(){}
 			inline Array(int Length) : Array_T_Base<Object*>(Length){}
 			inline Array(T* elements, int Length) : Array_T_Base<Object*>((Object**)(elements), Length){}
 			inline T* GetData(){

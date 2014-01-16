@@ -12,7 +12,7 @@ namespace System{
 		{
 			char* tmp = new char[capacity];
 			data = new String(tmp);
-			data->Length = capacity;
+			//data->Length = capacity;
 		}
 
 		String* StringBuilder::ToString()

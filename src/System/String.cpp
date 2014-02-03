@@ -4,90 +4,66 @@
 #include <stdio.h>
 #include <ctype.h>
 
-namespace System{
+namespace System{	
 
-	String::String() {
-		Data = new char[0];
-		Length = 0;
+	String::String() : std::string() {		
 	}
 
-	String::String(int val) {	
-		char* tmp = new char[33];
-		sprintf(tmp, "%d", val);
-		Length = strlen(tmp);
-		Data = new char[Length];
-		memcpy(Data, tmp, Length);
-		delete tmp;
+	String::String(int val) : std::string(::an_itoca(val)) {	
+		
 	}
 
-	String::String(long val) {	
-		char* tmp = new char[66];
-		sprintf(tmp, "%ld", val);
-		Length = strlen(tmp);
-		Data = new char[Length];
-		memcpy(Data, tmp, Length);
-		delete tmp;
+	String::String(long val) : std::string(::an_ltoca(val)) {			
 	}
 
-	String::String(char txt) {
-	
-		Length = 1;
-		Data = new char[1];
-		Data[0] = txt;
+	String::String(char txt) : std::string(::an_ctoca(txt)) {		
 	}
 
-	String::String(const char* txt) {
-		//TODO It will be nice to not to copy "constant" strings 
-		Length = strlen(txt);
-		Data = new char[Length+1];
-		strncpy(Data,txt,Length);
+	String::String(const char* txt) : std::string((const char*)txt){		
 	}
 
 	String::String(Array<char>* txt) {
-		Length = txt->Length;
-		Data = *txt;
-	}
-
-	Array<char>* String::ToCharArray()
-	{
-		return new Array<char>(Data, Length);
-	}
-
-	String* String::operator=(char* text) {
-		String* s = new String(text);
-		return s;
+		char* tmp = *txt;
+		std::string((const char*)tmp);	
 	}
 
 	String::operator const char*()
 	{
-		return Data;
+		return std::string::data();
 	}
 
 	String::operator char*()
 	{
-		return Data;
+		return (char*)std::string::data();
 	}
 
-	String::~String() {
-		if(Data!=null) {
-			delete Data;
-			Data = null;
-		}
+	String::~String(){		
 	}	
-	String* String::Concat(Array<String>* elements) {	
+
+
+	Array<char>* String::ToCharArray()	{
+		return new Array<char>((char*)std::string::data(), std::string::length());
+	}
+
+	String* String::operator=(char* text) {
+		return new String(text);
+	}
+
+	
+	String* String::Concat(Array<String>* elements) {		
 		stringstream ss;
 		for(int i = 0; i < elements->Length; i++)
 		{
 			String* s = (*elements)[i];
-			ss << s->Data;			
+			ss << s->data();			
 		}
-
+		
 		String* newstring = new String(ss.str().data());
 		//delete elements;
 		return newstring;
 	}
 
-	String* String::Concat(Array<Object>* elements) {
+	String* String::Concat(Array<Object>* elements) {		
 		Array<String>* stringArray = new Array<String>(elements->Length);
 
 		for(int i = 0; i < elements->Length; i++)
@@ -106,38 +82,28 @@ namespace System{
 			stringArray->SetData(i , tmp_s);
 		}		
 		return Concat(stringArray);
-	}	
+	}
 
-	char* stoupper( char* s )
-	{
-		char* p = s;
-  		while (*p = toupper( *p )) p++;
-  		return s;
-	}	
-
-	char* stolower( char* s )
-	{
-		char* p = s;
-  		while (*p = tolower( *p )) p++;
-  		return s;
-  	}	
-	
 	String* String::ToLower()
 	{
-		String* resString = new String(stolower(Data));
+		String* resString = new String(stolower((char*)std::string::data()));
 		return resString;
 	}
 
 	String* String::ToUpper()
-	{
-		String* resString = new String(stoupper(Data));
+	{		
+		String* resString = new String(stoupper((char*)std::string::data()));
 		return resString;
 	}
 
+	/*
+	inlined method
 	int String::getLength()
 	{
-		return this->Length;
+		return std::string::length();
 	}
+	*/
+
 	String* String::ToString()
 	{
 		return this;

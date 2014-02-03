@@ -6,11 +6,11 @@
 #include "Array.h"
 
 namespace System{
-	class String : public Object {
+	class String : public std::string, public Object {
 
 	private:
-		char* Data;
-		int Length;
+		//char* Data;
+		//int Length;
 	public:		
 		String(void);
 		String(int txt);
@@ -18,18 +18,20 @@ namespace System{
 		String(char txt);
 		String(const char* txt);
 		String(Array<char>* txt);
+		~String(void);
 		String* operator =(char* text);
 		Array<char>* ToCharArray();
 		operator const char*();
-		operator char*();
-		virtual ~String(void);
+		operator char*();		
 		String* ToString(void);
 		String* ToLower();
 		String* ToUpper();
 		static String* Concat(Array<String>* elements);
 		static String* Concat(Array<Object>* elements);
 
-		int getLength();
+		inline int getLength(){
+			return std::string::length();
+		}
 
 	};
 }

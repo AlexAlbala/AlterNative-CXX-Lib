@@ -18,8 +18,8 @@ namespace System{
 		DateTime(long long ticks);
 		DateTime(int year, int month, int day);
 		DateTime* AddMilliseconds(int milliseconds);
-		static DateTime* GetNow();
-		static DateTime* GetUtcNow();
+		static DateTime* getNow();
+		static DateTime* getUtcNow();
 		void _init();
 		String* ToString();
 

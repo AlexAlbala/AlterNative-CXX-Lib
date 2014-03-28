@@ -44,7 +44,7 @@ namespace System{
 			param_functor = *target;
 		}
 
-		inline void Thread::Sleep(int milliseconds)
+		void Thread::Sleep(int milliseconds)
 		{
 			//TO BE IMPROVED...
 			if(milliseconds < 0) while(1){}			
@@ -53,28 +53,28 @@ namespace System{
 			boost::this_thread::sleep(sleepTime);
 		}
 
-		inline void Thread::Sleep(TimeSpan* span)
+		void Thread::Sleep(TimeSpan* span)
 		{
 			boost::posix_time::milliseconds sleepTime(span->TotalMilliseconds);
 			boost::this_thread::sleep(sleepTime);
 		}
 
-		inline void Thread::Start()
+		void Thread::Start()
 		{	
 			workerThread = boost::thread(this->functor.functor);
 		}
 
-		inline void Thread::Start(Object* obj)
+		void Thread::Start(Object* obj)
 		{	
 			workerThread = boost::thread(this->param_functor.functor, obj);
 		}
 
-		inline void Thread::Join()
+		void Thread::Join()
 		{
 			workerThread.join();
 		}
 
-		inline void Thread::Abort()
+		void Thread::Abort()
 		{
 			workerThread.interrupt();
 		}

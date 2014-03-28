@@ -42,14 +42,14 @@ namespace System{
 		this->TicksPerMillisecond = time_duration::ticks_per_second()/1000;
 	}
 
-	DateTime* DateTime::GetNow()
+	DateTime* DateTime::getNow()
 	{
 		ptime now = microsec_clock::local_time();
 		time_duration diff = now - time_t_epoch;
 		return new DateTime(diff.ticks());
 	}
 
-	DateTime* DateTime::GetUtcNow()
+	DateTime* DateTime::getUtcNow()
 	{
 		ptime now = microsec_clock::universal_time();
 		time_duration diff = now - time_t_epoch;

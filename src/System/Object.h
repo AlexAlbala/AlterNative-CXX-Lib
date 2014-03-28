@@ -62,12 +62,12 @@ namespace System{
 			}		
 		};
 
-		template <typename T, bool isEnum>
+		template <typename T, bool isEnum, bool isBasic>
 		class __box_t{		
 		};
 
-		template <typename T>
-		class __box_t<T, true> : public __box_t_base<T>{	
+		template <typename T, bool isBasic>
+		class __box_t<T, true, isBasic> : public __box_t_base<T>{	
 		public:
 			__box_t(T t) : __box_t_base<T>(t){};
 			__box_t(T* t) : __box_t_base<T>(t){};
@@ -79,7 +79,7 @@ namespace System{
 		};
 
 		template <typename T>
-		class __box_t<T, false>  : public __box_t_base<T>{
+		class __box_t<T, false, true>  : public __box_t_base<T>{
 		public:
 			 __box_t(T t) : __box_t_base<T>(t){};
 			 __box_t(T* t) : __box_t_base<T>(t){};
@@ -90,10 +90,26 @@ namespace System{
 				return s;
 			}
 		};
+
+		//This case should never be visited, but in some cases the .NET Compiler
+		//makes boxes in unnecessary items:
+		// i.e WriteLine(Datetime.Now) --> WriteLine(Box<DateTime*>(DateTime::getNow())
+		template <typename T>
+		class __box_t<T, false, false>  : public __box_t_base<T>{
+		public:
+			 __box_t(T t) : __box_t_base<T>(t){};
+			 __box_t(T* t) : __box_t_base<T>(t){};
+
+			String* ToString()
+			{
+				String* s = new String(__box_t_base<T>::data->toString());
+				return s;
+			}
+		};
 	}
 	
 	template <typename T>
-	class Box_T : public __Internal__::__box_t<T, IsEnum(T)> {
+	class Box_T : public __Internal__::__box_t<T, IsEnum(T), IsBasic(T)> {
 	public:
 		Box_T(T t) : _Internal_::__box_t<T, IsEnum(T)>(t){};
 		Box_T(T* t) : _Internal_::__box_t<T, IsEnum(T)>(t){};

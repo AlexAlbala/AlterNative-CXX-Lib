@@ -52,9 +52,11 @@ namespace System {
 				boost::asio::io_service* m_serv;
 				boost::asio::deadline_timer* m_timer;
 				TimerCallback* callback;
+				TimerCallback* internalCallback;
 			private:
 				uint MAX_SUPPORTED_TIMEOUT;
 				void Restart(int period, int dueTime);
+				long actualPeriod;
 			//Attribute: __DynamicallyInvokable*
 			//Attribute: SecuritySafeCritical*
 			//Attribute: MethodImpl*(MethodImplOptions::NoInlining)
@@ -99,6 +101,9 @@ namespace System {
 			//Attribute: SecurityCritical*
 			private:
 				void TimerSetup(TimerCallback* callback, Object* state, uint dueTime, uint period, StackCrawlMark* stackMark);
+
+			private:
+				void extend(Object* state);
 		};
 	}
 }

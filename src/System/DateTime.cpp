@@ -26,7 +26,7 @@ namespace System{
 	{
 		_init();
 		ptime d(date(year,month,day));
-		time_duration diff = d - time_t_epoch;		
+		time_duration diff = d - TIME_T_EPOCH;		
 		this->DateData=diff.ticks();		
 	}
 
@@ -38,21 +38,20 @@ namespace System{
 
 	void DateTime::_init()
 	{
-		this->time_t_epoch = ptime(date(1970,1,1));
 		this->TicksPerMillisecond = time_duration::ticks_per_second()/1000;
 	}
 
 	DateTime* DateTime::getNow()
 	{
 		ptime now = microsec_clock::local_time();
-		time_duration diff = now - time_t_epoch;
+		time_duration diff = now - TIME_T_EPOCH;
 		return new DateTime(diff.ticks());
 	}
 
 	DateTime* DateTime::getUtcNow()
 	{
 		ptime now = microsec_clock::universal_time();
-		time_duration diff = now - time_t_epoch;
+		time_duration diff = now - TIME_T_EPOCH;
 		return new DateTime(diff.ticks());
 	}
 
@@ -60,7 +59,7 @@ namespace System{
 	{
 		/*static std::locale loc(std::wcout.getloc(), new wtime_facet(L"%d/%m/%Y %H:%M:%S"));*/
 		time_duration duration = milliseconds(this->DateData/this->TicksPerMillisecond);
-		ptime t = time_t_epoch + duration;
+		ptime t = TIME_T_EPOCH + duration;
 
 		std::string s;
 		std::ostringstream datetime_ss;

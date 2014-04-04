@@ -91,9 +91,6 @@ namespace System{
 			}
 		};
 
-		//This case should never be visited, but in some cases the .NET Compiler
-		//makes boxes in unnecessary items:
-		// i.e WriteLine(Datetime.Now) --> WriteLine(Box<DateTime*>(DateTime::getNow())
 		template <typename T>
 		class __box_t<T, false, false>  : public __box_t_base<T>{
 		public:
@@ -102,7 +99,7 @@ namespace System{
 
 			String* ToString()
 			{
-				String* s = new String(__box_t_base<T>::data->toString());
+				String* s = __box_t_base<T>::data->ToString();
 				return s;
 			}
 		};
@@ -111,7 +108,7 @@ namespace System{
 	template <typename T>
 	class Box_T : public __Internal__::__box_t<T, IsEnum(T), IsBasic(T)> {
 	public:
-		Box_T(T t) : _Internal_::__box_t<T, IsEnum(T)>(t){};
-		Box_T(T* t) : _Internal_::__box_t<T, IsEnum(T)>(t){};
+		Box_T(T t) : __Internal__::__box_t<T, IsEnum(T), IsBasic(T)>(t){};
+		Box_T(T* t) : __Internal__::__box_t<T, IsEnum(T), IsBasic(T)>(t){};
 	};
 }

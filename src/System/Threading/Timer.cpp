@@ -225,7 +225,9 @@ namespace System {
 		{
 			m_timer->expires_at(m_timer->expires_at() + boost::posix_time::milliseconds(actualPeriod));
 			m_timer->async_wait(*internalCallback);
-			callback->functor(state);
+
+			Thread* execThread = new Thread(new ParameterizedThreadStart(callback->functor));
+			execThread->Start(state);
 		}
 	}
 }

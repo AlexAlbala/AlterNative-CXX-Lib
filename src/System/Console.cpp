@@ -20,7 +20,6 @@ namespace System {
 	void Console::Write(String* s) {
 		char* tmp = *s;
 		std::cout << tmp;
-		delete tmp;
 	}
 
 	void Console::WriteLine(char* txt) {
@@ -54,7 +53,6 @@ namespace System {
 	void Console::WriteLine(String* s) {
 		char* tmp = *s;
 		std::cout << tmp << std::endl;
-		delete tmp;
 	}
 
 	String* Console::ReadLine() {

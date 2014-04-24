@@ -1,5 +1,10 @@
 #pragma once
 
+//tell boehm gc to activate the thread support
+#ifndef GC_THREADS
+#define GC_THREADS
+#endif
+#include "pre.h"
 #include "Object.h"
 #include "String.h"
 #include "Exception.h"

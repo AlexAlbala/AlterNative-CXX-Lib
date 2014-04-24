@@ -17,6 +17,7 @@ namespace System{
 
 	void GC::Init()
 	{
-		GC_init();			
+		GC_init();	
+		GC_allow_register_threads();
 	}
 }

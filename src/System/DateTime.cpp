@@ -2,13 +2,16 @@
 
 namespace System{
 	using namespace boost::gregorian;
-	using namespace boost::posix_time;
-
-	long dateData;
+	using namespace boost::posix_time;	
 
 	DateTime::DateTime()
 	{
 		_init();
+	}
+
+	DateTime::~DateTime()
+	{
+		Object::~Object();
 	}
 
 	DateTime::DateTime(long long ticks)
@@ -26,7 +29,7 @@ namespace System{
 	{
 		_init();
 		ptime d(date(year,month,day));
-		time_duration diff = d - TIME_T_EPOCH;		
+		time_duration diff = d - TIME_T_EPOCH;
 		this->DateData=diff.ticks();		
 	}
 
@@ -38,7 +41,7 @@ namespace System{
 
 	void DateTime::_init()
 	{
-		this->TicksPerMillisecond = time_duration::ticks_per_second()/1000;
+		this->TicksPerMillisecond = TICKS_PER_MILLISECOND;
 	}
 
 	DateTime* DateTime::getNow()
@@ -72,5 +75,6 @@ namespace System{
 		datetime_ss << t;
 		s = datetime_ss.str().c_str();
 		return new String(s.data());
+		//return new String("ola");
 	}
 }

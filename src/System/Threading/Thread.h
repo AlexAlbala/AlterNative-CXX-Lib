@@ -2,6 +2,7 @@
 #include "../System.h"
 #include "../Delegate.h"
 #include "../TimeSpan.h"
+
 #include <boost/thread.hpp>
 
 namespace System{
@@ -36,8 +37,15 @@ namespace System{
 		{
 		private:
 			boost::thread workerThread;
-			ThreadStart functor;
-			ParameterizedThreadStart param_functor;
+			ThreadStart functor, internalFunctor;
+			ParameterizedThreadStart paramFunctor, internalParamFunctor;
+
+			//Stack base for GC purposes
+			GC_stack_base sb;
+
+			void Thread::collectableThread();
+			void Thread::collectableParamThread(Object* param);
+
 		public:
 			Thread(ThreadStart* target);
 			Thread(ParameterizedThreadStart* target);

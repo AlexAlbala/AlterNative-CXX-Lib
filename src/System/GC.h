@@ -1,4 +1,5 @@
 #pragma once
+#include "../gc/include/gc.h"
 #include "../gc/include/gc_cpp.h"
 #include "Object.h"
 

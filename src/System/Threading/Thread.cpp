@@ -36,18 +36,25 @@ namespace System{
 
 		Thread::Thread(ThreadStart* target)
 		{			
-			functor = *target;			
+			functor = *target;
+			internalFunctor = ThreadStart(DELEGATE_FUNC(Thread::collectableThread));
+			
+			GC_get_stack_base(&sb);
 		}
 
 		Thread::Thread(ParameterizedThreadStart* target)
 		{			
-			param_functor = *target;
+			paramFunctor = *target;
+			internalParamFunctor = ParameterizedThreadStart(DELEGATE_FUNC(Thread::collectableParamThread, _1));
+			
+			GC_get_stack_base(&sb);
 		}
 
 		void Thread::Sleep(int milliseconds)
 		{
-			//TO BE IMPROVED...
+			//<ÑAPA>
 			if(milliseconds < 0) while(1){}			
+			//</ÑAPA>
 
 			boost::posix_time::milliseconds sleepTime(milliseconds);
 			boost::this_thread::sleep(sleepTime);
@@ -61,12 +68,12 @@ namespace System{
 
 		void Thread::Start()
 		{	
-			workerThread = boost::thread(this->functor.functor);
+			workerThread = boost::thread(this->internalFunctor.functor);
 		}
 
 		void Thread::Start(Object* obj)
 		{	
-			workerThread = boost::thread(this->param_functor.functor, obj);
+			workerThread = boost::thread(this->internalParamFunctor.functor, obj);
 		}
 
 		void Thread::Join()
@@ -77,6 +84,20 @@ namespace System{
 		void Thread::Abort()
 		{
 			workerThread.interrupt();
+		}
+
+		void Thread::collectableThread()
+		{			
+			GC_register_my_thread(&sb);
+			this->functor.functor();
+			GC_unregister_my_thread();
+		}
+
+		void Thread::collectableParamThread(Object* param)
+		{
+			GC_register_my_thread(&sb);
+			this->paramFunctor.functor(param);
+			GC_unregister_my_thread();
 		}
 	}
 }

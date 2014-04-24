@@ -1,6 +1,6 @@
 #pragma once
-#include <boost/signals2/signal.hpp>
 #include "System.h"
+#include <boost/signals2/signal.hpp>
 
 namespace System{
 

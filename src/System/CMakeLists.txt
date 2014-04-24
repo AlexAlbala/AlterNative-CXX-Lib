@@ -1,5 +1,14 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 PROJECT(sys)
+
+##################################################
+#Add symbols definitions for GC and boost compatibilities
+##################################################
+ADD_DEFINITIONS("-DGC_THREADS")
+IF(WIN32)
+ADD_DEFINITIONS("-DWIN32_LEAN_AND_MEAN")
+ENDIF()
+
 ##################################################
 #Macro for searching subdirectories
 ##################################################

@@ -31,6 +31,7 @@ ADD_DEFINITIONS("-D_CRT_SECURE_NO_DEPRECATE
                  -DALL_INTERIOR_POINTERS
                  -DGC_BUILD
 				 -DLARGE_CONFIG
+				 -DGC_THREADS
 ")
 
 IF(APPLE)
@@ -55,7 +56,7 @@ SET(SRC alloc.c reclaim.c allchblk.c misc.c mach_dep.c os_dep.c
         typd_mlc.c ptr_chck.c gc_cpp.cc mallocx.c checksums.c
         thread_local_alloc.c)
 SET(LIBS)
-OPTION(enable_threads "TODO" NO)
+OPTION(enable_threads "TODO" YES)
 IF(enable_threads)
         FIND_PACKAGE(Threads REQUIRED)
         MESSAGE("Thread Model: ${CMAKE_THREAD_LIBS_INIT}" )

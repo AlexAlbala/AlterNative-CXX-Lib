@@ -1,5 +1,5 @@
 #pragma once
-
+#include "pre.h"
 #include "support/general.h"
 #include "support/delegates.h"
 #include "support/events.h"
@@ -11,15 +11,3 @@
 #include "support/exceptions.h"
 #include "support/constraints.h"
 #include "support/stringtraits.h"
-
-
-
-
-
-
-
-
-
-
-
-

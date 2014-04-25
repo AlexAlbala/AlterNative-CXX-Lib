@@ -26,20 +26,22 @@ namespace{
 	{		
 		char* tmp = new char[33];
 #ifdef _MSC_VER
-		::itoa(val, tmp, 10);
+		//::itoa(val, tmp, 10);
+		::_itoa_s(val, tmp, 33, 10);
 #else
 		sprintf(tmp, "%d", val);		
 #endif
 		return tmp;
 	}
 
-	inline const char* an_ltoca(long val)
+	inline const char* an_ltoca(long long val)
 	{	
-		char* tmp = new char[33];
+		char* tmp = new char[66];
 #ifdef _MSC_VER
-		::itoa(val, tmp, 10);
+		//::itoa(val, tmp, 10);
+		::_ltoa_s(val, tmp, 66, 10);		
 #else
-		sprintf(tmp, "%d", val);		
+		sprintf(tmp, "%ld", val);		
 #endif
 		return tmp;
 	}

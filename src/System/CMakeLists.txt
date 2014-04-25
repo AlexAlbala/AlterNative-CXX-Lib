@@ -1,5 +1,22 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 PROJECT(sys)
+##################################################
+#Enable C++11 mode
+##################################################
+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR CMAKE_COMPILER_IS_GNUCXX)
+    include(CheckCXXCompilerFlag)
+    check_cxx_compiler_flag(--std=c++11 SUPPORTS_STD_CXX11)
+    check_cxx_compiler_flag(--std=c++0x SUPPORTS_STD_CXX01)
+    if(SUPPORTS_STD_CXX11)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11")
+        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --std=c++11")
+    elseif(SUPPORTS_STD_CXX01)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++0x")
+        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --std=c++0x")
+    else()
+        message(ERROR "Compiler does not support --std=c++11 or --std=c++0x.")
+    endif()
+endif()
 
 ##################################################
 #Add symbols definitions for GC and boost compatibilities
@@ -65,41 +82,21 @@ ENDFOREACH()
 
 ADD_LIBRARY(System ${SysLib})
 SET_TARGET_PROPERTIES(System PROPERTIES LINKER_LANGUAGE CXX)
+
+##################################################
+#Find boost libraries
+##################################################
 GET_PROPERTY(IS_RELEASE GLOBAL PROPERTY GL_IS_RELEASE)
 
 SET(Boost_USE_STATIC_LIBS        ON)
 SET(Boost_USE_MULTITHREADED      ON)
 SET(Boost_USE_STATIC_RUNTIME    OFF)
-#SET(Boost_ADDITIONAL_VERSIONS "1.47" "1.47.0" "1.48" "1.48.0" "1.49" "1.49.0" "1.50" "1.50.0" "1.51" "1.51.0" "1.52" "1.52.0" "1.53" "1.53.0" "1.54" "1.54.0" "1.55" "1.55.0" "1.56" "1.56.0")
 
-#FIND_PACKAGE( Boost 1.52.0 COMPONENTS system locale)
-FIND_PACKAGE(Boost REQUIRED COMPONENTS system locale regex)
+FIND_PACKAGE( Boost REQUIRED COMPONENTS system locale regex)
 
 IF(Boost_FOUND)
 	INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
 	TARGET_LINK_LIBRARIES(System ${Boost_LIBRARIES})
 ELSE()
-	IF(DEFINED $ENV{USR_BOOST_INCLUDE})
-		INCLUDE_DIRECTORIES($ENV{USR_BOOST_INCLUDE})
-	ELSE()
-		MESSAGE("Boost include directory not found, please set the environmental variable <USR_BOOST_INCLUDE> to the include boost directory")
-	ENDIF()
-	IF(DEFINED $ENV{USR_BOOST_LIBRARY})
-		IF(ANDROID OR UNIX)
-			#HOW TO DETECT THE NAME (THE VERSION NUMBER) AUTOMATICALLY ?
-			TARGET_LINK_LIBRARIES(${PROJ_NAME} $ENV{USR_BOOST_LIBRARY}/libboost_system-gcc-mt-1_49.a)
-		ELSE()					
-			IF(IS_RELEASE EQUAL 1)
-				#TODO: HOW TO DETECT THE NAME (THE VERSION NUMBER) AUTOMATICALLY ?
-				TARGET_LINK_LIBRARIES(${PROJ_NAME} $ENV{USR_BOOST_LIBRARY}/libboost_system-vc100-mt-1_51.so)
-				TARGET_LINK_LIBRARIES(${PROJ_NAME} $ENV{USR_BOOST_LIBRARY}/libboost_locale-vc100-mt-1_51.so)
-			ELSE()
-				#TODO: HOW TO DETECT THE NAME (THE VERSION NUMBER) AUTOMATICALLY ?
-				TARGET_LINK_LIBRARIES(${PROJ_NAME} $ENV{USR_BOOST_LIBRARY}/libboost_system-vc100-mt-gd-1_51.so)
-				TARGET_LINK_LIBRARIES(${PROJ_NAME} $ENV{USR_BOOST_LIBRARY}/libboost_locale-vc100-mt-gd-1_51.so)
-			ENDIF()
-		ENDIF()		
-	ELSE()    
-		MESSAGE("Boost library directory not found, please set the environmental variable <USR_BOOST_LIBRARY> to the library boost directory")
-	ENDIF()
+	MESSAGE("Please install boost libraries before using AlterNative. 1-55 or higher version recommended")
 ENDIF()

@@ -7,16 +7,16 @@ namespace System{
 		namespace Generic{
 
 			template<typename T>
-			class ListEnumerator_T : public IEnumerator_T<TypeArg(T)>
+			class ListEnumerator_T : public IEnumerator_T<T>
 			{
 			private:
-				T* initialPos;
-				T* elements;
+				TypeDecl(T)* initialPos;
+				TypeDecl(T)* elements;
 				int count;
 				int position;
 
 			public:
-				ListEnumerator_T(T* elements, int count)
+				ListEnumerator_T(TypeDecl(T)* elements, int count)
 				{
 					this->elements = elements;
 					this->initialPos = elements-1;
@@ -39,9 +39,9 @@ namespace System{
 					return;
 				}
 			
-				virtual T* getCurrent()
+				virtual BoxDecl(T) getCurrent()
 				{		
-					return (T*)(elements);
+					return OBJBOX<T>(*elements);					
 				}
 			};
 			
@@ -50,7 +50,7 @@ namespace System{
 			{
 			
 			private:	
-				T* elements;
+				TypeDecl(T)* elements;
 			
 			public:
 				int Count;
@@ -90,22 +90,23 @@ namespace System{
 					elements[Count++] = element;
 				}*/
 			
-				void Add(TypeParam(T) element)
+				//TODO: Optimize memory allocation
+				void Add(TypeDecl(T) element)
 				{
 					if (Count == 0)
-						elements = (T*)malloc(sizeof(T));
+						elements = (TypeDecl(T)*)malloc(sizeof(T));
 					else
-						elements = (T*)realloc(elements, (Count+1)*sizeof(T));
+						elements = (TypeDecl(T)*)realloc(elements, (Count+1)*sizeof(T));
 			
 					elements[Count++] = element;
 				}
 			
-				T* ElementAt(int index)
+				TypeDecl(T)* ElementAt(int index)
 				{
 					return (T*)(elements + index);					
 				}
 
-				T* operator[](int index)
+				TypeDecl(T)* operator[](int index)
 				{
 					return this->ElementAt(index);
 				}
@@ -120,7 +121,7 @@ namespace System{
 					return *this->ElementAt(index);
 				}*/
 
-				int IndexOf(TypeParam(T) element)
+				int IndexOf(TypeDecl(T) element)
 				{
 					for(int i = 0; i <Count; i++)
 					{
@@ -130,7 +131,7 @@ namespace System{
 					return -1;
 				}
 
-				void Remove(TypeParam(T) element)
+				void Remove(TypeDecl(T) element)
 				{		
 					int i = IndexOf(element);
 
@@ -139,7 +140,7 @@ namespace System{
 						elements[j]=elements[j+1];
 					}
 
-					elements = (TypeDecl(T))realloc(elements, (Count-1)*sizeof(T));
+					elements = (TypeDecl(T)*)realloc(elements, (Count-1)*sizeof(T));
 					Count--;
 				}
 
@@ -153,7 +154,7 @@ namespace System{
 						elements[j]=elements[j+1];
 					}
 
-					elements = (T*)realloc(elements, (Count-1)*sizeof(T));
+					elements = (TypeDecl(T)*)realloc(elements, (Count-1)*sizeof(T));
 					Count--;
 				}
 			};

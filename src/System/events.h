@@ -13,9 +13,9 @@ namespace System{
 	{
 	public:
 		template<typename A, typename... B>
-		static _event<A, B...> CreateEvent(_Delegate<A,B...>* del)
+		static __Internal__::_event<A, B...> CreateEvent(__Internal__::_Delegate<A,B...>* del)
 		{
-			_event<A, B...>* ev = new _event<A,B...>();
+			__Internal__::_event<A, B...>* ev = new __Internal__::_event<A,B...>();
 
 			if(del != null)
 			{

@@ -26,9 +26,9 @@ The type argument supplied for T must be or derive from the argument supplied fo
 #define Where_T_is_Class(T)
 #define Where_T_is_Struct(T)
 
-#define Where_T_is_New(T) __Internal__::WhereIsNew<T>()
-#define Where_T_is(T,Base) __Internal__::WhereIs<T,Base>()
-#define Where_T_is_Interface(T,Interface) __Internal__::WhereIs<T,Interface>()
+#define Where_T_is_New(T) ::__Internal__::WhereIsNew<T>()
+#define Where_T_is(T,Base) ::__Internal__::WhereIs<T,Base>()
+#define Where_T_is_Interface(T,Interface) ::__Internal__::WhereIs<T,Interface>()
 
 namespace __Internal__ {
     template<class T> struct WhereIsNew {

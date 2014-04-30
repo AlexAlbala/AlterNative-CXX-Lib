@@ -45,4 +45,11 @@ namespace{
 #endif
 		return tmp;
 	}
+
+	inline const char* an_ftoca(float val)
+	{	
+		char* tmp = new char[66];
+		sprintf(tmp, "%f", val);
+		return tmp;
+	}
 }

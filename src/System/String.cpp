@@ -19,6 +19,9 @@ namespace System{
 	String::String(char txt) : std::string(::an_ctoca(txt)) {		
 	}
 
+	String::String(float txt) : std::string(::an_ftoca(txt)) {		
+	}
+
 	String::String(const char* txt) : std::string((const char*)txt){		
 	}
 

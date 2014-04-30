@@ -16,6 +16,7 @@ namespace System{
 		String(int txt);
 		String(long txt);
 		String(char txt);
+		String(float txt);
 		String(const char* txt);
 		String(Array<char>* txt);
 		~String(void);

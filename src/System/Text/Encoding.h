@@ -1,3 +1,4 @@
+#pragma once
 #include "../System.h"
 
 namespace System{

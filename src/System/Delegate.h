@@ -87,7 +87,7 @@ namespace System{
                 TypeDecl(RType) Invoke(Arguments... args)
                 {        
                     boost::optional<TypeDecl(RType)> opt = this->_target(args...);
-                    return opt.get_value_or(null);
+                    return opt.get_value_or(0);
                 }
             };
         

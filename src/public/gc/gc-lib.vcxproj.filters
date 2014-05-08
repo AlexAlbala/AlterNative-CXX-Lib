@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="reclaim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="allchblk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mach_dep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_dep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mark_rts.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="headers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mark.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="obj_map.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="blacklst.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="finalize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="new_hblk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dbg_mlc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="malloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stubborn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dyn_load.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="typd_mlc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ptr_chck.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gc_cpp.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mallocx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="checksums.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="thread_local_alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2DABF6D3-580D-4D7D-8D11-E16431C471DE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

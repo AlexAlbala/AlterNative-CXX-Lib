@@ -11,6 +11,7 @@ for /D %%D in (%SYSTEMROOT%\Microsoft.NET\Framework\v4*) do set msbuildPath=%%D
 cd %msbuildPath%
 msbuild.exe %ALTERNATIVE_LIB_BIN%\AlterNativeLib.sln /p:PlatformToolset=v120_CTP_Nov2012
 
+if not exist %ALTERNATIVE_LIB_BIN%\libfiles mkdir %ALTERNATIVE_LIB_BIN%\libfiles
 ::TODO -> How to fix these ugly paths ?
 cd %ALTERNATIVE_LIB_BIN%
 copy src\public\gc\Debug\gc-lib.lib ..\libfiles

@@ -1,0 +1,3 @@
+[submodule "src/private"]
+	path = src/private
+	url = ../AlterNative-CXX-pvtLib

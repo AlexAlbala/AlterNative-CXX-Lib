@@ -43,8 +43,8 @@ namespace System{
 			//Stack base for GC purposes
 			GC_stack_base sb;
 
-			void Thread::collectableThread();
-			void Thread::collectableParamThread(Object* param);
+			void collectableThread();
+			void collectableParamThread(Object* param);
 
 		public:
 			Thread(ThreadStart* target);

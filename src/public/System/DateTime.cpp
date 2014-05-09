@@ -11,7 +11,7 @@ namespace System{
 
 	DateTime::~DateTime()
 	{
-		Object::~Object();
+		//Object::~Object();
 	}
 
 	DateTime::DateTime(long long ticks)

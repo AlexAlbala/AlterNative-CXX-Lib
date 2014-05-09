@@ -22,12 +22,6 @@ T& UNBOX(System::Object* t){
 /*********************************************************************************************************/
 /********************************************** RETURN TEMPLATE ******************************************/
 /*********************************************************************************************************/
-template<typename T>
-BoxDecl(T) OBJBOX(TypeDecl(T) element)
-{
-	return ::__Internal__::objbox<T, IsBasic(T)>::DO(element);
-};
-
 namespace __Internal__{
 	template<typename T, bool isBasic>
 	struct objbox
@@ -56,3 +50,10 @@ namespace __Internal__{
 		}
 	};
 }
+
+
+template<typename T>
+BoxDecl(T) OBJBOX(TypeDecl(T) element)
+{
+	return ::__Internal__::objbox<T, IsBasic(T)>::DO(element);
+};

@@ -1,4 +1,10 @@
 ##################################################
+#Precompiled headers
+##################################################
+SET (CMAKE_MODULE_PATH "$ENV{ALTERNATIVE_TOOLS_PATH}/CMake")
+INCLUDE($ENV{ALTERNATIVE_TOOLS_PATH}/Cotire/CMake/cotire.cmake)
+
+##################################################
 #Macro for searching subdirectories
 ##################################################
 MACRO(HEADER_DIRECTORIES return_list)
@@ -37,20 +43,7 @@ STRING(REGEX REPLACE "/" "_" root ${root})
 ##################################################
 #Enable C++11 mode
 ##################################################
-if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR CMAKE_COMPILER_IS_GNUCXX)
-    include(CheckCXXCompilerFlag)
-    check_cxx_compiler_flag(--std=c++11 SUPPORTS_STD_CXX11)
-    check_cxx_compiler_flag(--std=c++0x SUPPORTS_STD_CXX01)
-    if(SUPPORTS_STD_CXX11)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11")
-        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --std=c++11")
-    elseif(SUPPORTS_STD_CXX01)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++0x")
-        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --std=c++0x")
-    else()
-        message(ERROR "Compiler does not support --std=c++11 or --std=c++0x.")
-    endif()
-endif()
+INCLUDE($ENV{ALTERNATIVE_TOOLS_PATH}/Code/CMAKE-CXX11.cmake)
 
 ##################################################
 #Add symbols definitions for GC and boost compatibilities
@@ -100,21 +93,10 @@ ENDFOREACH()
 INCLUDE_DIRECTORIES(public)
 ADD_LIBRARY(System ${SysLib})
 SET_TARGET_PROPERTIES(System PROPERTIES LINKER_LANGUAGE CXX)
+COTIRE(System)
 
 ##################################################
 #Find boost libraries
 ##################################################
-GET_PROPERTY(IS_RELEASE GLOBAL PROPERTY GL_IS_RELEASE)
-
-SET(Boost_USE_STATIC_LIBS        ON)
-SET(Boost_USE_MULTITHREADED      ON)
-SET(Boost_USE_STATIC_RUNTIME    OFF)
-
-FIND_PACKAGE( Boost REQUIRED COMPONENTS system locale regex filesystem)
-
-IF(Boost_FOUND)
-	INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
-	TARGET_LINK_LIBRARIES(System ${Boost_LIBRARIES})
-ELSE()
-	MESSAGE("Please install boost libraries before using AlterNative. 1-55 or higher version recommended")
-ENDIF()
+SET(PROJ_NAME System)
+INCLUDE($ENV{ALTERNATIVE_TOOLS_PATH}/Code/CMAKE-BOOST.cmake)

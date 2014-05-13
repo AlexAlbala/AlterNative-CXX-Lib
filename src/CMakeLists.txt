@@ -1,8 +1,8 @@
 ##################################################
 #Precompiled headers
 ##################################################
-SET (CMAKE_MODULE_PATH "$ENV{ALTERNATIVE_TOOLS_PATH}/CMake")
-INCLUDE($ENV{ALTERNATIVE_TOOLS_PATH}/Cotire/CMake/cotire.cmake)
+#SET (CMAKE_MODULE_PATH $ENV{ALTERNATIVE_TOOLS_PATH}/CMake)
+#INCLUDE($ENV{ALTERNATIVE_TOOLS_PATH}/Cotire/CMake/cotire.cmake)
 
 ##################################################
 #Macro for searching subdirectories
@@ -93,7 +93,7 @@ ENDFOREACH()
 INCLUDE_DIRECTORIES(public)
 ADD_LIBRARY(System ${SysLib})
 SET_TARGET_PROPERTIES(System PROPERTIES LINKER_LANGUAGE CXX)
-COTIRE(System)
+#COTIRE(System)
 
 ##################################################
 #Find boost libraries

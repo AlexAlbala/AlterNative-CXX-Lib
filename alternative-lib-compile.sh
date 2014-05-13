@@ -1,4 +1,3 @@
-declare -x ALTERNATIVE_CPP_LIB_PATH=/home/codio/workspace
 declare -x ALTERNATIVE_LIB_BUILD=$ALTERNATIVE_CPP_LIB_PATH/build
 declare -x ALTERNATIVE_LIB_BIN=$ALTERNATIVE_CPP_LIB_PATH/build/bin
 

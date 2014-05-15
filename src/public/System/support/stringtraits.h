@@ -41,7 +41,7 @@ namespace{
 		//::itoa(val, tmp, 10);
 		::_ltoa_s(val, tmp, 66, 10);		
 #else
-		sprintf(tmp, "%ld", val);		
+		sprintf(tmp, "%lld", val);		
 #endif
 		return tmp;
 	}

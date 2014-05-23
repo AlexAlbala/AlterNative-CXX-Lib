@@ -8,6 +8,10 @@ branches:
 git:
   submodules: false
 
+ before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq libboost-chrono-dev libboost-locale-dev || /bin/true
+  
 install:
   - sudo apt-get install cmake libboost-all-dev build-essential
  

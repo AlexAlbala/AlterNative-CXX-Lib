@@ -9,7 +9,7 @@ git:
   submodules: false
 
 install:
-  - sudo apt-get install cmake libboost-dev build-essential
+  - sudo apt-get install cmake libboost-all-dev build-essential
  
 script:
   - mkdir tmp
@@ -21,7 +21,7 @@ script:
   - source ./alternative-lib-compile.sh
   - rm -rf tmp
   - cd build/libfiles
-  - [[ -f libSystem.a && -f libgc-lib.a ]]
+  - "[[ -f libSystem.a && -f libgc-lib.a ]]"
 
 notifications:
  email: true

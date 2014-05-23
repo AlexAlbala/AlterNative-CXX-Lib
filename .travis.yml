@@ -10,8 +10,8 @@ git:
   
 install:
   - sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse"
-  - sudo aptitude update
-  - sudo aptitude -f install cmake libboost-all-dev libboost-dev build-essential
+  - sudo apt-get update
+  - sudo apt-get -f install cmake libboost-all-dev libboost-dev build-essential libboost-chrono-dev libboost-locale-dev
  
 script:
   - mkdir tmp

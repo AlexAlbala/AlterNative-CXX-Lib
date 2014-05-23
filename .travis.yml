@@ -11,7 +11,7 @@ git:
 install:
   - sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse"
   - sudo apt-get update
-  - sudo apt-get -f install cmake libboost-all-dev libboost-dev build-essential libboost-chrono-dev libboost-locale-dev
+  - sudo apt-get -f install cmake libboost-all-dev libboost-dev build-essential
  
 script:
   - mkdir tmp

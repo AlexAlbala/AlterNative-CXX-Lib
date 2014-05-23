@@ -17,4 +17,5 @@ C++ library for AlterNative engine
 
                     source ./alternative-lib-compile.sh
                     
+* Note: If you are compiling the library standalone, make sure to copy Alter-Native/Tools folder and set ALTERNATIVE_TOOLS_PATH environment variable to this path. Link: https://github.com/AlexAlbala/Alter-Native                  
 * If compiled libraries appear in build/libfiles you have finished :)

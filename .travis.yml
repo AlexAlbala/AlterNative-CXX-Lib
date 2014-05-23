@@ -9,7 +9,7 @@ git:
   submodules: false
 
 install:
-  - sudo apt-get install mono-devel mono-gmcs cmake libboost-dev build-essential
+  - sudo apt-get install build-essential
  
 script:
   - source ./alternative-lib-compile.sh

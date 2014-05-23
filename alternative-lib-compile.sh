@@ -1,6 +1,6 @@
 #! /bin/sh
 
-if [ -z "$ALTERNATIVE_CPP_LIB_PATH" ];
+if [ -z "$ALTERNATIVE_CPP_LIB_PATH" ]; then
     declare -x ALTERNATIVE_CPP_LIB_PATH=`pwd`
 fi
 

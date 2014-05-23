@@ -9,7 +9,7 @@ git:
   submodules: false
 
 install:
-  - sudo apt-get install cmake libboost-all-dev build-essential
+  - sudo apt-get install cmake libboost-all-dev libboost-locale-dev libboost-chrono-dev build-essential
  
 script:
   - mkdir tmp

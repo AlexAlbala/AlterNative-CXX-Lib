@@ -9,6 +9,7 @@ git:
   submodules: false
   
 install:
+  - sudo apt-cache search libboost-locale libboost-chrono
   - sudo apt-get install cmake libboost-all-dev libboost-dev build-essential
  
 script:

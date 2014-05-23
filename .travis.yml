@@ -13,6 +13,8 @@ install:
  
 script:
   - source ./alternative-lib-compile.sh
+  - cd build/libfiles
+  - [[ -f libSystem.a && -f libgc-lib.a ]]
 
 notifications:
  email: true

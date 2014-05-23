@@ -4,14 +4,13 @@ language: c
 branches:
   only:
     - master
-cache:
-  - apt
 
 git:
   submodules: false
   
 install:
-  - sudo apt-cache search libboost-locale libboost-chrono
+  - sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse"
+  - sudo apt-ger update
   - sudo apt-get install cmake libboost-all-dev libboost-dev build-essential
  
 script:

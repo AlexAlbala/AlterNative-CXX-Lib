@@ -1,10 +1,8 @@
-Lib
-===
+# AlterNative-CXX-Lib [![Build Status](https://travis-ci.org/AlexAlbala/AlterNative-CXX-Lib.svg?branch=master)](https://travis-ci.org/AlexAlbala/AlterNative-CXX-Lib)
 
 C++ library for AlterNative engine
 
-Compiling
----------
+## Compiling
 
 * Run the provided script
   + Windows

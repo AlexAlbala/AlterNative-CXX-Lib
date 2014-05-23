@@ -9,10 +9,16 @@ git:
   submodules: false
 
 install:
-  - sudo apt-get install build-essential
+  - sudo apt-get install cmake libboost-dev build-essential
  
 script:
+  - mkdir tmp
+  - cd tmp
+  - git clone https://github.com/AlexAlbala/Alter-Native
+  - declare -x ALTERNATIVE_TOOLS_PATH=Alter-Native/Tools
+  - cd ..
   - source ./alternative-lib-compile.sh
+  - rm -rf tmp
   - cd build/libfiles
   - [[ -f libSystem.a && -f libgc-lib.a ]]
 

@@ -15,8 +15,9 @@ script:
   - mkdir tmp
   - cd tmp
   - git clone https://github.com/AlexAlbala/Alter-Native
-  - declare -x ALTERNATIVE_TOOLS_PATH=Alter-Native/Tools
-  - cd ..
+  - cd Alter-Native/Tools
+  - declare -x ALTERNATIVE_TOOLS_PATH=`pwd`
+  - cd ../../../
   - source ./alternative-lib-compile.sh
   - rm -rf tmp
   - cd build/libfiles

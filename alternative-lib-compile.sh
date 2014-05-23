@@ -1,5 +1,7 @@
-declare -x ALTERNATIVE_LIB_BUILD=$ALTERNATIVE_CPP_LIB_PATH/build
-declare -x ALTERNATIVE_LIB_BIN=$ALTERNATIVE_CPP_LIB_PATH/build/bin
+#! /bin/sh
+
+declare -x ALTERNATIVE_LIB_BUILD=$(dirname $0)/build
+declare -x ALTERNATIVE_LIB_BIN=$ALTERNATIVE_LIB_BUILD/bin
 
 
 
@@ -27,4 +29,10 @@ fi
 cp $ALTERNATIVE_LIB_BIN/src/libSystem.a $ALTERNATIVE_LIB_BUILD/libfiles
 cp $ALTERNATIVE_LIB_BIN/src/public/gc/libgc-lib.a $ALTERNATIVE_LIB_BUILD/libfiles
 
+if [! -f "$ALTERNATIVE_LIB_BUILD/libfiles/libSystem.a" ||  ! -f "$ALTERNATIVE_LIB_BUILD/libfiles/libgc-lib.a"]; then
+  exit 1
+fi
+
+
 cd $ALTERNATIVE_CPP_LIB_PATH
+exit 0

@@ -1,6 +1,10 @@
 #! /bin/sh
 
-declare -x ALTERNATIVE_LIB_BUILD=`pwd`/build
+if [ -z "$ALTERNATIVE_CPP_LIB_PATH" ];
+    declare -x ALTERNATIVE_CPP_LIB_PATH=`pwd`
+fi
+
+declare -x ALTERNATIVE_LIB_BUILD=$ALTERNATIVE_CPP_LIB_PATH/build
 declare -x ALTERNATIVE_LIB_BIN=$ALTERNATIVE_LIB_BUILD/bin
 
 

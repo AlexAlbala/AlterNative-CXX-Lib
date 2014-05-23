@@ -1,0 +1,18 @@
+language: c
+ 
+#whitelist
+branches:
+  only:
+    - master
+    
+git:
+  submodules: false
+
+install:
+  - sudo apt-get install mono-devel mono-gmcs cmake libboost-dev build-essential
+ 
+script:
+  - source ./alternative-lib-compile.sh
+
+notifications:
+ email: true

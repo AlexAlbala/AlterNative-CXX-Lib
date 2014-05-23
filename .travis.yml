@@ -10,11 +10,7 @@ git:
   
 install:
   - sudo apt-get -f install cmake libboost-all-dev libboost-dev build-essential
-  - wget http://ftp.us.debian.org/debian/pool/main/b/boost-defaults/libboost-chrono-dev_1.55.0.2_amd64.deb
-  - wget http://ftp.us.debian.org/debian/pool/main/b/boost-defaults/libboost-locale-dev_1.55.0.2_amd64.deb
-  - sudo dpkg -i libboost-chrono-dev_1.55.0.2_amd64.deb
-  - sudo dpkg -i libboost-locale-dev_1.55.0.2_amd64.deb
-  - sudo apt-get -f install
+  - apt-cache search boost
  
 script:
   - mkdir tmp

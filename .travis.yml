@@ -27,4 +27,4 @@ script:
   - "[[ -f libSystem.a && -f libgc-lib.a ]]"
 
 notifications:
- email: true
+  email: true

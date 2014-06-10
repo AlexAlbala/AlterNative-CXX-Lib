@@ -66,12 +66,14 @@ namespace System{
 		class __box_t{
 			__box_t(T t)
 			{
-				static_assert(false, "Invalid box template arguments");
+				//static_assert(false, "Invalid box template arguments");
+				throw exception("Invalid box template arguments");
 			}
 
 			__box_t(T* t)
 			{
-				static_assert(false, "Invalid box template arguments");
+				//static_assert(false, "Invalid box template arguments");
+				throw exception("Invalid box template arguments");
 			}
 		};
 

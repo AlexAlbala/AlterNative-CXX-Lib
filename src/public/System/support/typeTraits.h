@@ -31,6 +31,21 @@ BOOLEAN: returns if it is an enum type or not
 */
 #define IsEnum(T)							std::is_enum<T>::value
 
+/*
+BOOLEAN: returns if it is an struct type or not
+*/
+#define IsStruct(T)							::__Internal__::IsStructType<T>::result
+
+/*
+BOOLEAN: returns if it is a value type or not
+*/
+#define IsValueType(T)						IsBasic(T) || IsEnum(T) || IsStruct(T)
+
+/*
+Extracts the fullname of the type of the caller
+*/
+#define CURRENT_TYPE						typeid(*this).name()
+
 /*********************************************************************************************************/
 /*********************************************** VARIADIC  ***********************************************/
 /*********************************************************************************************************/

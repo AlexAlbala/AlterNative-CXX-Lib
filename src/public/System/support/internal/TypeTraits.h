@@ -1,4 +1,5 @@
 #pragma once
+#include "../valuetypes.h"
 
 /*********************************************************************************************************/
 /*********************************** ISFUNDAMENTALTYPE TEMPLATES  ****************************************/
@@ -10,7 +11,7 @@ namespace __Internal__{
 	*/
 	template<typename T>
 	struct IsFundamentalType {
-		enum { result = IsEnum(T) };
+		enum { result = false};
 	};
 
 	template<>
@@ -56,6 +57,20 @@ namespace __Internal__{
 	template<>
 	struct IsFundamentalType<void> {
 		enum { result = true };
+	};
+
+/*********************************************************************************************************/
+/********************************************* ISSTRUCTTYPE ************************************************/
+/*********************************************************************************************************/
+
+	template<typename T>
+	struct IsStructType {
+		enum { result = !IsEnum(T) && !IsBasic(T)};
+	};
+
+	template<>
+	struct IsStructType<System::Object> {
+		enum { result = false};
 	};
 
 /*********************************************************************************************************/

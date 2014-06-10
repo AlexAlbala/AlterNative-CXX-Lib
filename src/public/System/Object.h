@@ -62,24 +62,36 @@ namespace System{
 			}		
 		};
 
-		template <typename T, bool isEnum, bool isBasic>
-		class __box_t{		
+		template <typename T, bool isEnum, bool isBasic, bool isStruct>
+		class __box_t{
+			__box_t(T t)
+			{
+				static_assert(false, "Invalid box template arguments");
+			}
+
+			__box_t(T* t)
+			{
+				static_assert(false, "Invalid box template arguments");
+			}
 		};
 
-		template <typename T, bool isBasic>
-		class __box_t<T, true, isBasic> : public __box_t_base<T>{	
+		//Enum inside a box
+		template <typename T>
+		class __box_t<T, true, false, false> : public __box_t_base<T>{	
 		public:
 			__box_t(T t) : __box_t_base<T>(t){};
 			__box_t(T* t) : __box_t_base<T>(t){};
 
 			String* ToString()
 			{
+				//TODO: Use boost to extract the label of the enum
 				return new String("Enum");
 			}
 		};
 
+		//Primitive type inside a box
 		template <typename T>
-		class __box_t<T, false, true>  : public __box_t_base<T>{
+		class __box_t<T, false, true, false>  : public __box_t_base<T>{
 		public:
 			 __box_t(T t) : __box_t_base<T>(t){};
 			 __box_t(T* t) : __box_t_base<T>(t){};
@@ -91,8 +103,23 @@ namespace System{
 			}
 		};
 
+		//Struct type inside a box
 		template <typename T>
-		class __box_t<T, false, false>  : public __box_t_base<T>{
+		class __box_t<T, false, false, true>  : public __box_t_base<T>{
+		public:
+			 __box_t(T t) : __box_t_base<T>(t){};
+			 __box_t(T* t) : __box_t_base<T>(t){};
+
+			String* ToString()
+			{
+				String* s = __box_t_base<T>::data.ToString();
+				return s;
+			}
+		};
+
+		//Is an Object inside a Box (i.e DateTime)
+		template <typename T>
+		class __box_t<T, false, false, false>  : public __box_t_base<T>{
 		public:
 			 __box_t(T t) : __box_t_base<T>(t){};
 			 __box_t(T* t) : __box_t_base<T>(t){};
@@ -106,9 +133,9 @@ namespace System{
 	}
 	
 	template <typename T>
-	class Box_T : public __Internal__::__box_t<T, IsEnum(T), IsBasic(T)> {
+	class Box_T : public __Internal__::__box_t<T, IsEnum(T), IsBasic(T), IsStruct(T)> {
 	public:
-		Box_T(T t) : __Internal__::__box_t<T, IsEnum(T), IsBasic(T)>(t){};
-		Box_T(T* t) : __Internal__::__box_t<T, IsEnum(T), IsBasic(T)>(t){};
+		Box_T(T t) : __Internal__::__box_t<T, IsEnum(T), IsBasic(T), IsStruct(T)>(t){};
+		Box_T(T* t) : __Internal__::__box_t<T, IsEnum(T), IsBasic(T), IsStruct(T)>(t){};
 	};
 }

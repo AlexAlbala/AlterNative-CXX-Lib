@@ -9,6 +9,6 @@ namespace System{
 	}
 
 	String* Object::ToString(void){
-		return new String("System::Object");
+		return new String(CURRENT_TYPE);
 	}
 }

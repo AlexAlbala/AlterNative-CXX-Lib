@@ -2,8 +2,14 @@
 
 C++ library for AlterNative engine
 
-## Compiling
+Getting the code
+----------------
 
+	git clone https://github.com/AlexAlbala/AlterNative-CXX-Lib.git
+
+Compiling
+---------
+* Install boost and cmake libraries. For more information see https://github.com/AlexAlbala/Alter-Native Readme
 * Run the provided script
   + Windows
 
@@ -17,5 +23,5 @@ C++ library for AlterNative engine
 
                     source ./alternative-lib-compile.sh
                     
-* Note: If you are compiling the library standalone, make sure to copy Alter-Native/Tools folder and set ALTERNATIVE_TOOLS_PATH environment variable to this path. Link: https://github.com/AlexAlbala/Alter-Native                  
+* Note: If you are compiling the library standalone (without downloading Alter-Native repository), make sure to copy Alter-Native/Tools folder and set ALTERNATIVE_TOOLS_PATH environment variable to this path. Link: https://github.com/AlexAlbala/Alter-Native                  
 * If compiled libraries appear in build/libfiles you have finished :)

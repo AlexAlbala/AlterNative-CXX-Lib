@@ -39,9 +39,9 @@ namespace System{
 				data[index] = element;
 			}
 
-			T* GetData()
+			TypeDecl(T) GetData(int index)
 			{
-				return data;
+				return data[index];
 			}
 
 			operator T*()
@@ -116,16 +116,17 @@ namespace System{
 			inline Array() : Array_T_Base<Object*>(){}
 			inline Array(int Length) : Array_T_Base<Object*>(Length){}
 			inline Array(T* elements, int Length) : Array_T_Base<Object*>((Object**)(elements), Length){}
-			inline T* GetData(){
-				return dynamic_cast<T*>(Array_T_Base<Object*>::GetData());//CAST !
-			}
-
+			
 			inline void SetData(int index, T* element){
 				Array_T_Base<Object*>::SetData(index, (Object*)element);
 			}
 
 			inline T* operator[](int index){
 				return reinterpret_cast<T*>(Array_T_Base<Object*>::operator[](index));//CUIDADO EL CAST
+			}
+
+			inline T* GetData(int index){
+				return reinterpret_cast<T*>(Array_T_Base<Object*>:GetData(index));//CUIDADO EL CAST
 			}
 		};
 	}

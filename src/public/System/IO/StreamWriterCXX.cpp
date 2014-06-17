@@ -33,7 +33,7 @@ namespace System{
 		void StreamWriter::Write(Array<char>* text, int length)
 		{
 			char* buffer = new char[length];
-			memcpy(buffer,text->GetData(),length);
+			memcpy(buffer,(char*)(*text),length);
 			*file << buffer;
 		}
 
@@ -82,7 +82,7 @@ namespace System{
 			char* tmp = new char[count];
 			for(int i=index; i < index+count; i++)
 			{
-				tmp[i-index] = buffer->GetData()[i];
+				tmp[i-index] = ((char*)(*buffer))[i];
 			}
 			*file << tmp;
 			delete tmp;

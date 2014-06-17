@@ -27,7 +27,8 @@ namespace System {
 	}
 
 	void Console::WriteLine(Array<char>* c) {
-		std::cout << c->GetData() << std::endl;
+		char* tmp = *c;
+		std::cout << (tmp) << std::endl;
 	}
 
 	void Console::WriteLine(int i) {

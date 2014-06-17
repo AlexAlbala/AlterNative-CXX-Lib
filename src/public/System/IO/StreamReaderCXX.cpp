@@ -94,7 +94,7 @@ namespace System{
 			if(length - index < count)
 				count = length - index;
 
-			file->read(buffer->GetData() + index,count);
+			file->read((*buffer) + index,count);
 
 			return count;
 		}

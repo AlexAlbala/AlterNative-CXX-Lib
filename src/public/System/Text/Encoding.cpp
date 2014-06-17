@@ -26,12 +26,12 @@ namespace System{
 
 		String* Encoding::UTF8::GetString(Array<char>* bytes)
 		{        
-			return GetString(bytes->GetData());
+			return GetString((*bytes));
 		}
 
 		String* UTF8Encoding::GetString(Array<char>* input)
 		{
-			return Encoding::UTF8::GetString(input->GetData());
+			return Encoding::UTF8::GetString((*input));
 		}
 
 		Array<char>* UTF8Encoding::GetBytes(String* input)

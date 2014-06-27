@@ -55,9 +55,14 @@ namespace System{
 					return MAP_KV::size();
 				}
 
-				inline void SetData(TypeDecl(KeyT) key, TypeDecl(ValueT) value)
+				inline void SetData(TypeDecl(ValueT) key, TypeDecl(KeyT) value)
 				{	
 					MAP_KV::at(key) = value;
+				}
+
+				inline TypeDecl(ValueT)& GetData(TypeDecl(KeyT) key)
+				{					
+					return MAP_KV::at(key);
 				}
 
 				inline bool ContainsKey(TypeDecl(KeyT) key)

@@ -17,6 +17,10 @@ namespace System {
 		std::cout << (i ? "True" : "False");
 	}
 
+	void Console::Write(float f) {
+		std::cout << f ;
+	}
+
 	void Console::Write(String* s) {
 		char* tmp = *s;
 		std::cout << tmp;
@@ -54,6 +58,10 @@ namespace System {
 	void Console::WriteLine(String* s) {
 		char* tmp = *s;
 		std::cout << tmp << std::endl;
+	}
+
+	void Console::WriteLine(){
+		std::cout << std::endl;
 	}
 
 	String* Console::ReadLine() {

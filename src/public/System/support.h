@@ -1,6 +1,7 @@
 #pragma once
 #include "support/general.h"
 #include "support/memory.h"
+#include "support/array.h"
 #include "support/delegates.h"
 #include "support/events.h"
 #include "support/loops.h"

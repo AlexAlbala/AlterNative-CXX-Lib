@@ -44,5 +44,10 @@ namespace System{
 			return std::string::length();
 		}
 
+		inline String* operator+(const String& other){
+			this->append(other);
+			return this;
+		}
+
 	};
 }

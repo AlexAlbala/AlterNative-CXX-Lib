@@ -82,7 +82,7 @@ namespace System{
 			{
 				tmp_s = tmp->ToString();	
 			}
-			stringArray->SetData(i , tmp_s);
+			stringArray->SetData(i, tmp_s);
 		}		
 		return Concat(stringArray);
 	}

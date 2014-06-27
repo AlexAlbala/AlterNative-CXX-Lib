@@ -29,7 +29,7 @@ namespace System{
 				data = new T[Length];
 				for(int i = 0; i < Length; i++)
 				{
-					data[i] = *(elements + i);					
+					data[i] = *(elements + i);
 				}
 				this->Length = Length;
 			}
@@ -132,10 +132,10 @@ namespace System{
 	}
 
 	template<typename T>
-	class Array : public __Internal__::Array<T, IsBasic(T)>{
+	class Array : public __Internal__::Array<T, IsValueType(T)>{
 	public:
-		Array() : __Internal__::Array<T, IsBasic(T)>(){}
-		Array(int Length) : __Internal__::Array<T, IsBasic(T)>(Length){}
-		Array(T* elements, int Length) : __Internal__::Array<T, IsBasic(T)>(elements, Length){}	
+		Array() : __Internal__::Array<T, IsValueType(T)>(){}
+		Array(int Length) : __Internal__::Array<T, IsValueType(T)>(Length){}
+		Array(T* elements, int Length) : __Internal__::Array<T, IsValueType(T)>(elements, Length){}	
 	};
 }

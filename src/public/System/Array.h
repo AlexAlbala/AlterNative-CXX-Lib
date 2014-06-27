@@ -126,7 +126,7 @@ namespace System{
 			}
 
 			inline T* GetData(int index){
-				return reinterpret_cast<T*>(Array_T_Base<Object*>:GetData(index));//CUIDADO EL CAST
+				return reinterpret_cast<T*>(Array_T_Base<Object*>::GetData(index));//CUIDADO EL CAST
 			}
 		};
 	}

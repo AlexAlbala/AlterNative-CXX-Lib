@@ -45,8 +45,10 @@ namespace System{
 		}
 
 		inline String* operator+(const String& other){
-			this->append(other);
-			return this;
+			String* tmp = new String();
+			tmp->append(*this);
+			tmp->append(other);
+			return tmp;
 		}
 
 	};

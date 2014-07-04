@@ -1,5 +1,6 @@
 #pragma once
 #include <System/Convert.h>
+#include <stdint.h>
 
 //#define IntPtr int*
 
@@ -33,7 +34,7 @@ namespace System{
 		}
 
 		operator int(){
-			return (int)pointer;
+			return (int)(intptr_t)pointer;
 		}
 
 		IntPtr(int* other){
@@ -41,7 +42,7 @@ namespace System{
 		}
 
 		IntPtr(int other){
-			pointer = (int*)other;
+			pointer = (int*)(intptr_t)other;
 		}
 	};
 

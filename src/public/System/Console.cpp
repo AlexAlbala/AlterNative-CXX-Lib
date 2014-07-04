@@ -8,6 +8,10 @@ namespace System {
 	void Console::Write(char* txt) {
 		std::cout << txt;
 	}
+	
+	void Console::Write(char txt) {
+		std::cout << txt;
+	}
 
 	void Console::Write(int i) {
 		std::cout << i;
@@ -27,6 +31,10 @@ namespace System {
 	}
 
 	void Console::WriteLine(char* txt) {
+		std::cout << txt << std::endl;
+	}
+	
+	void Console::WriteLine(char txt) {
 		std::cout << txt << std::endl;
 	}
 

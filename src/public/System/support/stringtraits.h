@@ -29,7 +29,7 @@ namespace{
 		//::itoa(val, tmp, 10);
 		::_itoa_s(val, tmp, 33, 10);
 #else
-		sprintf(tmp, "%d", val);		
+		sprintf(tmp, "%d", val);
 #endif
 		return tmp;
 	}
@@ -39,9 +39,9 @@ namespace{
 		char* tmp = new char[66];
 #ifdef _MSC_VER
 		//::itoa(val, tmp, 10);
-		::_ltoa_s(val, tmp, 66, 10);		
+		::_ltoa_s(val, tmp, 66, 10);
 #else
-		sprintf(tmp, "%lld", val);		
+		sprintf(tmp, "%lld", val);
 #endif
 		return tmp;
 	}

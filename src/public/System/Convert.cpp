@@ -18,4 +18,19 @@ namespace System{
 	{
 		return atoi(*value);
 	}
+
+	float Convert::ToSingle(String* value)
+	{
+		return (float)atof(*value);
+	}
+
+	double Convert::ToDouble(String* value)
+	{
+		return atof(*value);
+	}
+
+	long long Convert::ToInt64(String* value)
+	{
+		return atol(*value);
+	}
 }

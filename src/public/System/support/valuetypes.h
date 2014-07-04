@@ -1,6 +1,7 @@
 #pragma once
 #include <System/Convert.h>
 
+//#define IntPtr int*
 
 namespace System{
 	struct ValueType
@@ -10,6 +11,8 @@ namespace System{
 		//GetHashCode
 	};
 
+
+	//********************** Int
 	struct Int : ValueType
 	{
 	public:
@@ -20,6 +23,56 @@ namespace System{
 	};
 
 	struct Int32 : Int
-	{};
+	{};	
+
+	struct IntPtr : ValueType{
+		int* pointer;
+
+		operator int*(){
+			return pointer;
+		}
+
+		operator int(){
+			return (int)pointer;
+		}
+
+		IntPtr(int* other){
+			pointer = other;
+		}
+
+		IntPtr(int other){
+			pointer = (int*)other;
+		}
+	};
+
+	//********************* Float
+	struct Float : ValueType
+	{
+	public:
+		static float Parse(String* text)
+		{
+			return System::Convert::ToSingle(text);
+		}
+	};
+
+	//********************* Double
+	struct Double : ValueType
+	{
+	public:
+		static double Parse(String* text)
+		{
+			return System::Convert::ToDouble(text);
+		}
+	};
+
+	//********************* Long
+	struct Long : ValueType
+	{
+	public:
+		static long long Parse(String* text)
+		{
+			return System::Convert::ToInt64(text);
+		}
+	};
 }
 

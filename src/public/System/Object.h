@@ -27,7 +27,7 @@ namespace System{
 	namespace __Internal__{
 		template<typename T>
 		class __box_t_base : public Object
-		{		
+		{
 		protected:
 			T data;
 		public:	

@@ -8,12 +8,14 @@ namespace System {
 	public:
 
 		static void Write(char* txt);
+		static void Write(char txt);
 		static void Write(int i);
 		static void Write(bool i);
 		static void Write(String* s);
 		static void Write(float f);
 
 		static void WriteLine(char* txt);
+		static void WriteLine(char txt);
 		static void WriteLine(int i);
 		static void WriteLine(bool i);
 		static void WriteLine(float i);

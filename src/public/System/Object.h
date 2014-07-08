@@ -64,7 +64,7 @@ namespace System{
 
 		template <typename T, bool isEnum, bool isBasic, bool isStruct>
 		class __box_t{
-			__box_t(T t)
+		/*	__box_t(T t)
 			{
 				//static_assert(false, "Invalid box template arguments");
 				throw exception("Invalid box template arguments");
@@ -75,7 +75,7 @@ namespace System{
 				//static_assert(false, "Invalid box template arguments");
 				throw exception("Invalid box template arguments");
 			}
-		};
+		*/};
 
 		//Enum inside a box
 		template <typename T>

@@ -4,14 +4,14 @@ namespace{
 	char* stoupper( char* s )
 	{
 		char* p = s;
-		while (*p = toupper( *p )) p++;
+		while ((*p = toupper( *p ))) p++;
 		return s;
 	}	
 
 	char* stolower( char* s )
 	{
 		char* p = s;
-		while (*p = tolower( *p )) p++;
+		while ((*p = tolower( *p ))) p++;
 		return s;
 	}
 

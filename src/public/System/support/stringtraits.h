@@ -40,7 +40,7 @@ namespace{
 //#ifdef _MSC_VER
 		//::_ltoa_s(val, tmp, 33, 10);		
 //#else
-		sprintf_s(tmp, 66, "%lld", val);
+		sprintf(tmp, "%lld", val);
 //#endif
 		return tmp;
 	}
@@ -48,8 +48,8 @@ namespace{
 	inline const char* an_ftoca(float val)
 	{	
 		char* tmp = new char[66];
-		sprintf_s(tmp, 66, "%f", val);
-//		sprintf_s(tmp, "%f", val);
+		//sprintf_s(tmp, 66, "%f", val);
+		sprintf(tmp, "%f", val);
 		return tmp;
 	}
 }

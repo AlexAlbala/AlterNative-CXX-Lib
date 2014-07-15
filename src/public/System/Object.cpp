@@ -13,6 +13,6 @@ namespace System{
 	}
 
 	int Object::GetHashCode(){
-		return (IntPtr)(intptr_t*)this;
+		return (int)this;
 	}
 }

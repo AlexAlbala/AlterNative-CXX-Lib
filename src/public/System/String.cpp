@@ -108,16 +108,27 @@ namespace System{
 			return -1;
 	}
 
-	/*
-	inlined method
-	int String::getLength()
-	{
-		return std::string::length();
-	}
-	*/
-
 	String* String::ToString()
 	{
 		return this;
 	}
+
+	int String::GetHashCode()
+	{
+		const char* chPtr = this->data();
+		int num = 352654597;
+		int num2 = num;
+		int* numPtr = (int*)chPtr;
+		int length = this->getLength();
+		for (int i = length; i > 0; i -= 4)
+		{
+			num = (((num << 5) + num) + (num >> 27)) ^ numPtr[0];
+			if (i <= 2)			
+				break;
+
+			num2 = (((num2 << 5) + num2) + (num2 >> 27)) ^ numPtr[1];
+			numPtr += 2;
+		}
+		return (num + (num2 * 1566083941));
+    }
 }

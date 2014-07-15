@@ -7,6 +7,7 @@
 #include "support/loops.h"
 #include "support/typeTraits.h"
 #include "support/asis.h"
+#include "support/switch.h"
 #include "support/boxing.h"
 #include "support/lock.h"
 #include "support/exceptions.h"

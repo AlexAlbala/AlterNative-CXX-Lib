@@ -1,4 +1,6 @@
 #pragma once
+#include <boost/algorithm/string/split.hpp>
+#include <boost/algorithm/string/classification.hpp>
 #include <string.h>
 #include "Object.h"
 #include "GC.h"
@@ -27,6 +29,7 @@ namespace System{
 		String* ToString(void);
 		String* ToLower();
 		String* ToUpper();
+		virtual int GetHashCode();
 		
 		int IndexOf(const char c);
 		static String* Concat(Array<String>* elements);

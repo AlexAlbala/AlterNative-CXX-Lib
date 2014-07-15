@@ -11,4 +11,8 @@ namespace System{
 	String* Object::ToString(void){
 		return new String(CURRENT_TYPE);
 	}
+
+	int Object::GetHashCode(){
+		return (IntPtr)(intptr_t*)this;
+	}
 }

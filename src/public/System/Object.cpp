@@ -12,7 +12,7 @@ namespace System{
 		return new String(CURRENT_TYPE);
 	}
 
-	int Object::GetHashCode(){
-		return (int)this;
+	long int Object::GetHashCode(){
+		return (long int)this;
 	}
 }

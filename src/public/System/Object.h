@@ -16,7 +16,7 @@ namespace System{
 		Object(void);
 		~Object(void);
 		virtual String* ToString(void);
-		virtual int GetHashCode();
+		virtual long int GetHashCode();
 		
 		//boost::mutex mutex;
 	};

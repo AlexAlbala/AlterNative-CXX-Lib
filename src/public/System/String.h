@@ -29,7 +29,7 @@ namespace System{
 		String* ToString(void);
 		String* ToLower();
 		String* ToUpper();
-		virtual int GetHashCode();
+		virtual long int GetHashCode();
 		
 		int IndexOf(const char c);
 		static String* Concat(Array<String>* elements);

@@ -113,7 +113,7 @@ namespace System{
 		return this;
 	}
 
-	int String::GetHashCode()
+	long int String::GetHashCode()
 	{
 		const char* chPtr = this->data();
 		int num = 352654597;

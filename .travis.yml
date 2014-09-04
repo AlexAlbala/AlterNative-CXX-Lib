@@ -18,8 +18,8 @@ script:
   - cd tmp
   - git clone https://github.com/AlexAlbala/Alter-Native
   - cd Alter-Native/Tools
-  - declare -x ALTERNATIVE_TOOLS_PATH=`pwd`
-  - declare -x BOOST_LIBRARYDIR=/usr/lib/
+  - export ALTERNATIVE_TOOLS_PATH=`pwd`
+  - export BOOST_LIBRARYDIR=/usr/lib/
   - cd ../../../
   - source ./alternative-lib-compile.sh
   - rm -rf tmp

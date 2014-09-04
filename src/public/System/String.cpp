@@ -140,10 +140,10 @@ namespace System{
 	Array<String>* String::Split(Array<char>* delim)
 	{
 		std::string s = *this;		
-		std::string delimiter = delim != null ? *delim : " ";
+		std::string delimiter = delim != null ? (std::string(*delim)) : (std::string(" "));
 				
 		if(delimiter.size() == 0)
-			delimiter = " ";
+			delimiter = std::string(" ");
 
 		std::vector<std::string> res;
 
@@ -156,8 +156,8 @@ namespace System{
 		}
 		res.push_back(s);	
 		
-		Array<String>* result = new Array<String>(res.size());
-		for(int i = 0; i <res.size(); i++)
+		Array<String>* result = new Array<String>((int)res.size());
+		for(int i = 0; i < (int)res.size(); i++)
 			result->SetData(i, new String(res.at(i).data()));
 
 		return result;

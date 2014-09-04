@@ -1,4 +1,6 @@
 #pragma once
+#include <vector>
+#include <regex>
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string/classification.hpp>
 #include <string.h>
@@ -30,6 +32,8 @@ namespace System{
 		String* ToLower();
 		String* ToUpper();
 		virtual long int GetHashCode();
+
+		Array<String>* Split(Array<char>* delim);
 		
 		int IndexOf(const char c);
 		static String* Concat(Array<String>* elements);

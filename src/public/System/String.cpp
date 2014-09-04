@@ -4,13 +4,18 @@
 #include <stdio.h>
 #include <ctype.h>
 
+#include <boost/algorithm/string.hpp>
+#include <boost/algorithm/string/join.hpp>
+#include <boost/algorithm/string/regex.hpp>
+#include <boost/regex.hpp>
+
 namespace System{	
 
 	String::String() : std::string() {		
 	}
 
 	String::String(int val) : std::string(::an_itoca(val)) {	
-		
+
 	}
 
 	String::String(long val) : std::string(::an_ltoca(val)) {			
@@ -52,7 +57,7 @@ namespace System{
 		return new String(text);
 	}
 
-	
+
 	String* String::Concat(Array<String>* elements) {		
 		stringstream ss;
 		for(int i = 0; i < elements->Length; i++)
@@ -60,7 +65,7 @@ namespace System{
 			String* s = (*elements)[i];
 			ss << s->data();			
 		}
-		
+
 		String* newstring = new String(ss.str().data());
 		//delete elements;
 		return newstring;
@@ -130,5 +135,31 @@ namespace System{
 			numPtr += 2;
 		}
 		return (num + (num2 * 1566083941));
-    }
+	}
+
+	Array<String>* String::Split(Array<char>* delim)
+	{
+		std::string s = *this;		
+		std::string delimiter = delim != null ? *delim : " ";
+				
+		if(delimiter.size() == 0)
+			delimiter = " ";
+
+		std::vector<std::string> res;
+
+		size_t pos = 0, count=0;
+		std::string token;
+		while ((pos = s.find(delimiter)) != std::string::npos) {
+			token = s.substr(0, pos);
+			res.push_back(token);
+			s.erase(0, pos + delimiter.length());
+		}
+		res.push_back(s);	
+		
+		Array<String>* result = new Array<String>(res.size());
+		for(int i = 0; i <res.size(); i++)
+			result->SetData(i, new String(res.at(i).data()));
+
+		return result;
+	}
 }

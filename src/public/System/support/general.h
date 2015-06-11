@@ -12,3 +12,15 @@
 	#endif
 	#define ulong								unsigned long long
 #endif
+
+//#define ASYNC
+//#define RELEASE
+#define HIGH_PERF
+
+//For asserts if needed
+/*#ifdef RELEASE
+#define NDEBUG
+#endif*/
+
+
+#include <assert.h>

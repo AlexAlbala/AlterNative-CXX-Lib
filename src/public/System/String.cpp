@@ -10,6 +10,7 @@
 #include <boost/regex.hpp>
 
 namespace System{	
+	String* String::Empty = new String("");
 
 	String::String() : std::string() {		
 	}

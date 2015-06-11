@@ -16,6 +16,9 @@ namespace System{
 		//char* Data;
 		//int Length;
 	public:		
+		static String* Empty;
+
+
 		String(void);
 		String(int txt);
 		String(long txt);
@@ -57,6 +60,5 @@ namespace System{
 			tmp->append(other);
 			return tmp;
 		}
-
 	};
 }

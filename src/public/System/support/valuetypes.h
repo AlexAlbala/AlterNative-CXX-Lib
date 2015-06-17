@@ -26,8 +26,7 @@ namespace System{
 	struct Int32 : Int
 	{};	
 
-	struct IntPtr : ValueType{		
-		static const int* Zero;
+	struct IntPtr : ValueType{
 		int* pointer;
 
 		operator int*(){
@@ -36,10 +35,6 @@ namespace System{
 
 		operator int(){
 			return (int)(intptr_t)pointer;
-		}
-
-		IntPtr(){
-			Zero = (int*)0;
 		}
 
 		IntPtr(int* other){

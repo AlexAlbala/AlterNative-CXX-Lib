@@ -34,10 +34,6 @@ namespace System{
 				this->Length = Length;
 			}
 
-			int getLength(){
-				return Length;
-			}
-
 			void SetData(int index, TypeDecl(T) element)
 			{
 				data[index] = element;
@@ -55,10 +51,8 @@ namespace System{
 
 			TypeDecl(T) operator[](int index)
 			{
-#ifndef HIGH_PERF
-				if(index < 0 || index >= Length)
-					throw exception();//Message
-#endif
+				//if(index < 0 || index >= Length)
+					//throw exception();//Message
 				return data[index];
 			}
 

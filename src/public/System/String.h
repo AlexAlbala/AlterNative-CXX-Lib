@@ -34,6 +34,7 @@ namespace System{
 		virtual long int GetHashCode();
 
 		Array<String>* Split(Array<char>* delim);
+		Array<String>* Split(String* delim);
 		
 		int IndexOf(const char c);
 		static String* Concat(Array<String>* elements);

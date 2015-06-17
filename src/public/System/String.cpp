@@ -137,6 +137,11 @@ namespace System{
 		return (num + (num2 * 1566083941));
 	}
 
+	Array<String>* String::Split(String* delim)
+	{
+		return Split(delim->ToCharArray());
+	}
+
 	Array<String>* String::Split(Array<char>* delim)
 	{
 		std::string s = *this;		

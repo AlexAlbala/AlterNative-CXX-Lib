@@ -26,7 +26,7 @@ namespace System {
 			long getAddress();
 			void setAddress(long value);
 			AddressFamily getAddressFamily();
-			Array<char>* IPAddress::GetAddressBytes();
+			Array<char>* GetAddressBytes();
 
 			static IPAddress* Parse(String* ipString);
 			//static IPAddress* InternalParse(String* ipString, bool tryParse);

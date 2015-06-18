@@ -214,7 +214,7 @@ namespace System {
 			
 			this->actualPeriod = period;
 			this->internalCallback = new TimerCallback(DELEGATE_FUNC(Timer::extend, _1));
-			m_serv = new boost::asio::io_service();
+			m_serv = AN_GLOBALS::io_service();
 			m_timer = new boost::asio::deadline_timer(*m_serv, boost::posix_time::milliseconds(dueTime));
 			m_timer->async_wait(*internalCallback);
 

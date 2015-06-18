@@ -5,6 +5,7 @@ namespace System{
 		namespace Sockets{
 			Socket::Socket(AddressFamily addressFamily, SocketType socketType, ProtocolType protocolType){
 				this->_family = addressFamily;
+				this->_protocol = protocolType;
 				switch(protocolType){
 				case ProtocolType::Udp:
 					_socket = new UDPSocket();
@@ -14,7 +15,7 @@ namespace System{
 					break;
 				default:
 					_socket = null;
-					throw new System::Exception(new String("KE ASE"));
+					throw new System::Exception(new String("Invalid protocol type"));
 				}
 			}
 
@@ -26,7 +27,21 @@ namespace System{
 			}
 
 			void Socket::Connect(IPAddress* ipAddress, int port){
-					_socket->connect(*(ipAddress->ToString()), port);
+				_socket->connect(*(ipAddress->ToString()), port);
+			}
+
+			void Socket::Listen(int backLog){
+				if(this->_family == AddressFamily::InterNetwork){
+					assert(_binding != null);
+					IPEndPoint* ipep = (IPEndPoint*)_binding;
+					if(this->_protocol == ProtocolType::Tcp){	
+						_tcpsrvsocket = new TCPServerSocket(*(ipep->getAddress()->ToString()), ipep->getPort(), backLog);
+					}
+				}
+			}
+
+			void Socket::Bind(EndPoint* endPoint){
+				this->_binding = endPoint;				
 			}
 
 			int Socket::Send(Array<char>* data){
@@ -35,8 +50,37 @@ namespace System{
 			}
 
 			void Socket::Close(){				
-				delete _socket;
+				if(_tcpsrvsocket != null){
+					_tcpsrvsocket->cleanUp();
+					delete _tcpsrvsocket;
+				}
+
+				if(_socket != null){
+					_socket->cleanUp();
+					delete _socket;
+				}
+
 				_socket = null;
+				_tcpsrvsocket = null;
+			}
+
+			Socket* Socket::Accept(){
+				if(this->_protocol == ProtocolType::Tcp){					
+					return (Socket*)_tcpsrvsocket->accept();
+				}
+				return null;
+			}
+
+			int Socket::Receive(Array<char>* buffer){
+				return Receive(buffer, AN_MAX_BUFFER_LENGTH, SocketFlags::None);
+			}
+
+			int Socket::Receive(Array<char>* buffer, int length, SocketFlags socketFlags){
+				return this->Receive(buffer, length, 0, socketFlags);
+			}
+
+			int Socket::Receive(Array<char>* buffer, int length, int offset, SocketFlags socketFlags){
+				return _socket->recv(*buffer + offset, length);
 			}
 		}
 	}

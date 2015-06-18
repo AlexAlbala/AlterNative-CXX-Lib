@@ -48,6 +48,7 @@ INCLUDE($ENV{ALTERNATIVE_TOOLS_PATH}/Code/CMAKE-CXX11.cmake)
 ##################################################
 #Add symbols definitions for GC and boost compatibilities
 ##################################################
+#ADD_DEFINITIONS("-DAN_LIB")
 ADD_DEFINITIONS("-DGC_THREADS")
 IF(WIN32)
 ADD_DEFINITIONS("-DWIN32_LEAN_AND_MEAN")

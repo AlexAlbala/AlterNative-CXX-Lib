@@ -25,7 +25,7 @@ namespace{
 	inline const char* an_itoca(int val)
 	{
 		char* tmp = new char[33];
-#ifdef _MSC_VER
+#ifdef WIN32
 		//::itoa(val, tmp, 10);
 		::_itoa_s(val, tmp, 33, 10);
 #else
@@ -37,19 +37,23 @@ namespace{
 	inline const char* an_ltoca(long long val)
 	{	
 		char* tmp = new char[66];
-//#ifdef _MSC_VER
-		//::_ltoa_s(val, tmp, 33, 10);		
-//#else
+#ifdef WIN32
+		//::_ltoa_s(val, tmp, 33, 10);	
+		printf_s(tmp, 66, "%f", val);
+#else
 		sprintf(tmp, "%lld", val);
-//#endif
+#endif
 		return tmp;
 	}
 
 	inline const char* an_ftoca(float val)
 	{	
 		char* tmp = new char[66];
-		//sprintf_s(tmp, 66, "%f", val);
+#ifdef WIN32
+		sprintf_s(tmp, 66, "%f", val);
+#else
 		sprintf(tmp, "%f", val);
+#endif
 		return tmp;
 	}
 }

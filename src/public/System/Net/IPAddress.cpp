@@ -2,10 +2,11 @@
 #include <System/Exception/SystemException/ArgumentException/ArgumentOutOfRangeException.h>
 namespace System {
 	namespace Net {
-		IPAddress* IPAddress::Any = new IPAddress(0);
-		IPAddress* IPAddress::Loopback = new IPAddress(16777343);
-		IPAddress* IPAddress::Broadcast = new IPAddress((long)((ulong)(-1)));
-		IPAddress* IPAddress::None = IPAddress::Broadcast;
+		/*static IPAddress* IPAddress::Any = new IPAddress(0);
+		static IPAddress* IPAddress::Loopback = new IPAddress(16777343);
+		static IPAddress* IPAddress::Broadcast = new IPAddress((long)((ulong)(-1)));
+		static IPAddress* IPAddress::None = IPAddress::Broadcast;*/
+
 		//IPAddress* IPAddress::IPv6Any;
 		//IPAddress* IPAddress::IPv6Loopback;
 		//IPAddress* IPAddress::IPv6None;
@@ -120,9 +121,9 @@ namespace System {
 			ushort c2 = (ushort)stoi(*(splitted->GetData(2)));
 			ushort c3 = (ushort)stoi(*(splitted->GetData(3)));
 
-			std::cout << std::endl << "chars" << (ushort)c0 << std::endl << (ushort) c1 << std::endl << (ushort)c2 << std::endl << (ushort)c3 << std::endl;
+			//std::cout << std::endl << "chars" << (ushort)c0 << std::endl << (ushort) c1 << std::endl << (ushort)c2 << std::endl << (ushort)c3 << std::endl;
 
-			std::cout << std::endl << "strings" << splitted->GetData(0)->c_str() << std::endl << splitted->GetData(1)->c_str() << std::endl << splitted->GetData(2)->c_str() << std::endl << splitted->GetData(3)->c_str() << std::endl;
+			//std::cout << std::endl << "strings" << splitted->GetData(0)->c_str() << std::endl << splitted->GetData(1)->c_str() << std::endl << splitted->GetData(2)->c_str() << std::endl << splitted->GetData(3)->c_str() << std::endl;
 
 			address->SetData(0, c0);
 			address->SetData(1, c1);

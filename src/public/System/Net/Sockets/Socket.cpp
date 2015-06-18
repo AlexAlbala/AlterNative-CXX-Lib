@@ -80,7 +80,8 @@ namespace System{
 			}
 
 			int Socket::Receive(Array<char>* buffer, int length, int offset, SocketFlags socketFlags){
-				return _socket->recv(*buffer + offset, length);
+				char* b = *buffer;
+				return _socket->recv(b + offset, length);
 			}
 		}
 	}

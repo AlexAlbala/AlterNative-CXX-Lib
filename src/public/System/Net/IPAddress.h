@@ -17,10 +17,10 @@ namespace System {
 			long m_ScopeId;
 
 		public:
-			static IPAddress* Any;
+			/*static IPAddress* Any;
 			static IPAddress* Loopback;
 			static IPAddress* Broadcast;
-			static IPAddress* None;
+			static IPAddress* None;*/
 
 			long m_Address;
 			long getAddress();

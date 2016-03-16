@@ -17,12 +17,20 @@ namespace System {
 		std::cout << i;
 	}
 
+    void Console::Write(long l) {
+        std::cout << l;
+    }
+
 	void Console::Write(bool i) {
 		std::cout << (i ? "True" : "False");
 	}
 
 	void Console::Write(float f) {
-		std::cout << f ;
+		std::cout << f;
+	}
+
+    void Console::Write(double d) {
+		std::cout << d;
 	}
 
 	void Console::Write(String* s) {
@@ -45,6 +53,10 @@ namespace System {
 
 	void Console::WriteLine(int i) {
 		std::cout << i << std::endl;
+	}
+	
+    void Console::WriteLine(long l) {
+		std::cout << l << std::endl;
 	}
 
 	void Console::WriteLine(bool i) {

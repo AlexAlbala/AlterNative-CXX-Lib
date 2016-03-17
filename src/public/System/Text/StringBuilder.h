@@ -9,8 +9,7 @@ namespace System{
 		class StringBuilder : public virtual Object /*,ISerializable*/{
 
 		private:
-			String* data;
-			int DefaultCapacity;
+            stringstream ss;    
 	
 		public:
 			int Length;
@@ -18,6 +17,7 @@ namespace System{
 			StringBuilder(int capacity);
 
 			String* ToString();
+            StringBuilder* Append(String* value);
 			StringBuilder* Append(Array<char>* value , int startIndex, int charCount);
 			StringBuilder* Append(char value);
 		};

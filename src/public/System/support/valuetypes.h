@@ -1,6 +1,8 @@
 #pragma once
 #include <System/Convert.h>
 #include <stdint.h>
+#include <cmath>
+#include <limits>
 
 //#define IntPtr int*
 
@@ -54,6 +56,11 @@ namespace System{
 		{
 			return System::Convert::ToSingle(text);
 		}
+        static float IsNaN(float a) {
+            return isnan(a);
+        }
+        static constexpr float PositiveInfinity = std::numeric_limits<float>::infinity();
+        static constexpr float NaN = std::numeric_limits<float>::quiet_NaN();
 	};
 
 	//********************* Double
@@ -64,6 +71,11 @@ namespace System{
 		{
 			return System::Convert::ToDouble(text);
 		}
+        static double IsNaN(float a) {
+            return isnan(a);
+        }
+        static constexpr float PositiveInfinity = std::numeric_limits<double>::infinity();
+        static constexpr float NaN = std::numeric_limits<double>::quiet_NaN();
 	};
 
 	//********************* Long

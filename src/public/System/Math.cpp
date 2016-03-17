@@ -10,4 +10,10 @@ namespace System {
 	double Math::Sqrt(double val){
 		return sqrt(val);
 	}
+    double Math::Floor(double val) {
+        return floor(val);
+    }
+    double Math::Pow(double a, double b) {
+        return pow(a,b);
+    }
 }

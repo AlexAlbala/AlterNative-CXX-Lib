@@ -71,11 +71,11 @@ namespace System{
 		{
 			return System::Convert::ToDouble(text);
 		}
-        static double IsNaN(float a) {
+        static double IsNaN(double a) {
             return isnan(a);
         }
-        static constexpr float PositiveInfinity = std::numeric_limits<double>::infinity();
-        static constexpr float NaN = std::numeric_limits<double>::quiet_NaN();
+        static constexpr double PositiveInfinity = std::numeric_limits<double>::infinity();
+        static constexpr double NaN = std::numeric_limits<double>::quiet_NaN();
 	};
 
 	//********************* Long

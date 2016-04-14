@@ -6,4 +6,10 @@
 /*
 FOREACH MACRO
 */
-#define FOREACH(var, container)				container->GetEnumerator()->Reset(); for(auto var = (container)->begin()++; var != (container)->end(); ++var)
+
+#define FOREACH(var, container)                     \
+    auto __endpointer_##container##__ = (container)->end();       \
+    container->GetEnumerator()->Reset();            \
+    for(auto var = (container)->begin()++;          \
+        var != __endpointer_##container##__;                      \
+        ++var)

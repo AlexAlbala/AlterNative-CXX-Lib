@@ -18,18 +18,18 @@ namespace System{
 			private:
 			//T* p;
 			IEnumerator_T<T> *it;
-			bool is_end_iterator;
-			bool is_end;
+			char is_end_iterator;
+			char is_end;
 			public:
 				iteratorcxx(IEnumerator_T<T> *_it){
 					this->it = _it;
-					this->is_end_iterator = false;
-					this->is_end = false;
+					this->is_end_iterator = 0;
+					this->is_end = 0;
 				}
 			
 				iteratorcxx(int n){
 					if(!n)
-						this->is_end_iterator = true;
+						this->is_end_iterator = 1;
 				}
 			
 				T* operator()(){
@@ -62,14 +62,13 @@ namespace System{
 				}
 			
 				bool operator==(const iteratorcxx& rhs){
-					if(!rhs.is_end && !this->is_end) throw;
-					else{
+                    if(!(rhs.is_end) && !(this->is_end)) {
+                        throw "One iterator MUST be at end!";
+                    } else {
 						if(rhs.is_end_iterator)
 							return this->is_end;
-						else if(this->is_end_iterator)
-							return rhs.is_end;
 						else
-							throw;
+							return rhs.is_end;
 					}
 				}
 			

@@ -13,3 +13,4 @@ FOREACH MACRO
     for(auto var = (container)->begin()++;          \
         var != __endpointer_##container##__;                      \
         ++var)
+
